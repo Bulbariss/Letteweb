@@ -2,9 +2,9 @@ import React from "react";
 
 function Waves() {
   return (
-    <section className="absolute bottom-0 right-0 left-0">
+    <section className="bottom-0 right-0 left-0 bg-coolGray-100">
       <svg
-        className="waves bg-coolGray-100"
+        className="waves "
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28"

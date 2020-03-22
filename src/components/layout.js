@@ -8,9 +8,7 @@ function Layout({ children }) {
   return (
     <Fragment>
       <Header />
-      <main className="max-w-80 mx-auto flex flex-col px-6 sm:px-10 lg:px-16 justify-center min-h-screen">
-        {children}
-      </main>
+      <main>{children}</main>
 
       <Footer />
       <CookieBanner />
