@@ -33,6 +33,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         tailwind: true,
+        whitelistPatterns: [/sym-\d?\d/g],
         purgeOnly: [`src/css/style.css`]
       }
     },
