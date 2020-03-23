@@ -1,19 +1,39 @@
 import React from "react";
-
+import { Link, graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Waves from "../components/waves";
 import ContactForm from "../components/contactForm";
+import BackgroundImage from "gatsby-background-image";
+import mouseSvg from "../images/mouse.svg";
+import teamPhoto from "../images/team.jpg";
+import personPhoto from "../images/person2.jpg";
 
 function IndexPage() {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "bg-hero.jpg" }) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Layout>
       <SEO
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
       />
-
-      <section id="hero" className="min-h-screen bg-white flex lazyBg">
+      <BackgroundImage
+        className="min-h-screen flex"
+        Tag="section"
+        fluid={image.sharp.fluid}
+        fadeIn="soft"
+      >
         <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center ">
           <h1 className="font-bold text-4xl mt-0 sm:mt-12 md:text-6xl  max-w-4xl leading-none mx-auto">
             New generation of <br /> web development
@@ -22,68 +42,66 @@ function IndexPage() {
             We create websites for businesses that provide great experience for
             their users.
           </p>
-          <a
-            href=" contact"
+          <Link
+            to="/contact"
             className="btn-cc btn-lg mt-8 text-white bg-indigo-700 rounded-lg transform hover:scale-105 hover:bg-indigo-600 ease-in
                 duration-100
                 w-fit px-8
                 sm:mx-auto shadow-2xl"
           >
             Get in touch
-          </a>
+          </Link>
         </div>
         <img
-          src="img/mouse.svg"
+          src={mouseSvg}
           className="absolute bottom-0 center-y z-10"
           id="mouse-img"
           alt="Scroll down"
         />
-      </section>
+      </BackgroundImage>
 
       <section id="what-we-do" className="bg-coolGray-050  flex">
         <div className="max-w-80 mx-auto flex flex-col px-6 sm:px-10 lg:px-16 justify-center overflow-hidden">
           <div className="justify-center py-16 sm:py-20 xxl:py-24">
             <div className="flex flex-col sm:flex-row ">
               <img
-                src="img/placeholder.svg"
-                data-src="img/team.jpg"
-                data-srcset="img/team.jpg"
-                className="lazy sm:w-1/2 sm:order-last z-10   sm:h-1/2 self-center rounded-lg"
+                src={teamPhoto}
+                className=" sm:w-1/2 sm:order-last z-10   sm:h-1/2 self-center rounded-lg"
                 alt="Team"
               />
 
-              <div className="sm:pr-8  max-w-2xl sm:w-1/2 self-center z-10  ">
+              <div className="sm:pr-8  max-w-2xl sm:w-1/2 self-center z-10">
                 <h2 className="text-2xl sm:text-lg lg:text-2xl font-bold max-w-md mt-8 sm:mt-0 text-coolGray-900 leading-snug">
                   Combining modern design with science proved principles allows
                   us to create beautiful and functional websites that bring
                   customers to your business.
                 </h2>
-                <a
-                  href="studio"
+                <Link
+                  to="/studio"
                   className="btn-cc mt-8 text-white rounded-lg bg-indigo-700 rounded-lg 
                              hover:bg-indigo-600 
                             duration-100 w-fit px-8"
                 >
                   See more
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex items-center sm:justify-between flex-col sm:flex-row pt-8 text-coolGray-700 leading-relaxed">
-              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:pl-0 z-10  FadeUp ">
+              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:pl-0 z-10   ">
                 <p className="before-01 ">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Nesciunt soluta natus cum qui facilis repudiandae sapiente
                   modi tempore dolores commodi!
                 </p>
               </div>
-              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:px-2 z-10  FadeUp sm:anim-delay-05">
+              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:px-2 z-10   sm:anim-delay-05">
                 <p className="before-02">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Nesciunt soluta natus cum qui facilis repudiandae sapiente
                   modi tempore dolores commodi!
                 </p>
               </div>
-              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:pr-0 z-10  FadeUp sm:anim-delay-06">
+              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:pr-0 z-10   sm:anim-delay-06">
                 <p className="before-03">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Nesciunt soluta natus cum qui facilis repudiandae sapiente
@@ -105,23 +123,19 @@ function IndexPage() {
           </h2>
           <div className="flex flex-col sm:flex-row self-center text-left max-w-5xl overflow-hidden">
             <div className="flex w-full sm:w-1/2 ">
-              <div className="max-w-xs p-4 z-10   sm:FadeUp ">
+              <div className="max-w-xs p-4 z-10    ">
                 <img
-                  className="lazy rounded-lg mb-4"
-                  src="img/placeholder.svg"
-                  data-src="img/person2.jpg"
-                  data-srcset="img/person2.jpg"
+                  className=" rounded-lg mb-4"
+                  src={personPhoto}
                   alt="Erlends Morozo"
                 />
                 <p className="font-bold text-indigo-100">Erlends Morozo</p>
                 <p className="text-indigo-200">Project Manager</p>
               </div>
-              <div className=" max-w-xs  p-4 z-10   sm:FadeUp anim-delay-05">
+              <div className=" max-w-xs  p-4 z-10    anim-delay-05">
                 <img
-                  className="lazy rounded-lg mb-4"
-                  src="img/placeholder.svg"
-                  data-src="img/person2.jpg"
-                  data-srcset="img/person2.jpg"
+                  className=" rounded-lg mb-4"
+                  src={personPhoto}
                   alt="Vladimir Radionovsky"
                 />
                 <p className="font-bold text-indigo-200">
@@ -131,23 +145,19 @@ function IndexPage() {
               </div>
             </div>
             <div className="flex w-fit  w-full sm:w-1/2 ">
-              <div className=" max-w-xs p-4 z-10   sm:FadeUp anim-delay-06">
+              <div className=" max-w-xs p-4 z-10    anim-delay-06">
                 <img
-                  className="lazy rounded-lg mb-4"
-                  src="img/placeholder.svg"
-                  data-src="img/person2.jpg"
-                  data-srcset="img/person2.jpg"
+                  className=" rounded-lg mb-4"
+                  src={personPhoto}
                   alt="John Doe"
                 />
                 <p className="font-bold text-indigo-200">John Doe</p>
                 <p className="text-indigo-200">Creative Director</p>
               </div>
-              <div className=" max-w-xs p-4 z-10   sm:FadeUp anim-delay-07">
+              <div className=" max-w-xs p-4 z-10    anim-delay-07">
                 <img
-                  className="lazy rounded-lg mb-4"
-                  src="img/placeholder.svg"
-                  data-src="img/person2.jpg"
-                  data-srcset="img/person2.jpg"
+                  className=" rounded-lg mb-4"
+                  src={personPhoto}
                   alt="John Doe"
                 />
                 <p className="font-bold text-indigo-200">John Doe</p>

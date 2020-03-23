@@ -7,6 +7,8 @@ module.exports = {
   plugins: [
     "gatsby-plugin-eslint",
     `gatsby-plugin-react-helmet`,
+    "gatsby-transformer-sharp",
+    // "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -16,7 +18,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#4dc0b5`,
         display: `minimal-ui`,
-        icon: `src/images/tailwind-icon.png`
+        icon: `./images/tailwind-icon.png`
       }
     },
     {
@@ -35,6 +37,21 @@ module.exports = {
         tailwind: true,
         whitelistPatterns: [/sym-\d?\d/g],
         purgeOnly: [`src/css/style.css`]
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "images"
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        stripMetadata: true,
+        jpegQuality: 75,
+        pngQuality: 75
       }
     },
     `gatsby-plugin-offline`

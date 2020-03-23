@@ -107,7 +107,7 @@ function Header() {
       </header>
 
       <nav id="menu" className={`${isMenuExpanded ? `active` : ` `} sm:hidden`}>
-        <div id="menu-items" className="text-Bold">
+        <div id="menu-items" className="font-bold">
           <ul>
             {links.map(link => (
               <li className="nav-list-item" key={link.title}>

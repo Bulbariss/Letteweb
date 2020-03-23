@@ -8,7 +8,7 @@ function NotFoundPage() {
     <Layout>
       <SEO title="404: Not found" />
       <section>
-        <div className="mx-auto pt-24 py-10 text-lg relative max-w-2xl text-muted-black">
+        <div className="px-6 sm:px-10 lg:px-16 mx-auto pt-24 py-10 text-lg relative max-w-2xl text-muted-black">
           <h1 className="mb-4 text-4xl font-bold">Privacy Policy</h1>
           <h2 className="mb-4 text-2xl font-bold">What Are Cookies</h2>
           <p className="mb-6">

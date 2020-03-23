@@ -2,13 +2,32 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Waves from "../components/waves";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
 
 function Studio() {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "bg-studio.jpg" }) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
   return (
     <Layout>
       <SEO title="404: Not found" />
-      <section className="min-h-screen flex text-white" id="studio-hero">
+
+      <BackgroundImage
+        className="min-h-screen flex"
+        Tag="section"
+        fluid={image.sharp.fluid}
+        fadeIn="soft"
+        id="studio-hero"
+      >
         <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16">
           <div className="mr-auto">
             <h1
@@ -27,7 +46,7 @@ function Studio() {
             </h1>
           </div>
         </div>
-      </section>
+      </BackgroundImage>
 
       <section className="bg-coolGray-050 px-6 sm:px-10 lg:px-16 text-coolGray-900 flex">
         <div className="max-w-80 self-center py-16 sm:py-20 xxl:py-24">
