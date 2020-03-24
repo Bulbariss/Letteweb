@@ -8,6 +8,7 @@ import BackgroundImage from "gatsby-background-image";
 import mouseSvg from "../images/mouse.svg";
 import teamPhoto from "../images/team.jpg";
 import personPhoto from "../images/person2.jpg";
+import InViewComp from "../components/inViewComp";
 
 function IndexPage() {
   const { image } = useStaticQuery(graphql`
@@ -64,18 +65,22 @@ function IndexPage() {
         <div className="max-w-80 mx-auto flex flex-col px-6 sm:px-10 lg:px-16 justify-center overflow-hidden">
           <div className="justify-center py-16 sm:py-20 xxl:py-24">
             <div className="flex flex-col sm:flex-row ">
-              <img
-                src={teamPhoto}
-                className=" sm:w-1/2 sm:order-last z-10   sm:h-1/2 self-center rounded-lg"
-                alt="Team"
-              />
+              <InViewComp className="sm:w-1/2 sm:order-last z-10 sm:h-1/2 self-center">
+                <img
+                  src={teamPhoto}
+                  className="animated FadeLeft rounded-lg"
+                  alt="Team"
+                />
+              </InViewComp>
 
               <div className="sm:pr-8  max-w-2xl sm:w-1/2 self-center z-10">
-                <h2 className="text-2xl sm:text-lg lg:text-2xl font-bold max-w-md mt-8 sm:mt-0 text-coolGray-900 leading-snug">
-                  Combining modern design with science proved principles allows
-                  us to create beautiful and functional websites that bring
-                  customers to your business.
-                </h2>
+                <InViewComp className="max-w-md mt-8 sm:mt-0 ">
+                  <h2 className="text-2xl sm:text-lg lg:text-2xl font-bold text-coolGray-900 leading-snug animated FadeRight">
+                    Combining modern design with science proved principles
+                    allows us to create beautiful and functional websites that
+                    bring customers to your business.
+                  </h2>
+                </InViewComp>
                 <Link
                   to="/studio"
                   className="btn-cc mt-8 text-white rounded-lg bg-indigo-700 rounded-lg 
@@ -87,27 +92,27 @@ function IndexPage() {
               </div>
             </div>
             <div className="flex items-center sm:justify-between flex-col sm:flex-row pt-8 text-coolGray-700 leading-relaxed">
-              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:pl-0 z-10   ">
+              <InViewComp className="w-full sm:w-1/3 max-w-xs p-4 sm:pl-0 z-10 animated FadeUp">
                 <p className="before-01 ">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Nesciunt soluta natus cum qui facilis repudiandae sapiente
                   modi tempore dolores commodi!
                 </p>
-              </div>
-              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:px-2 z-10   sm:anim-delay-05">
+              </InViewComp>
+              <InViewComp className="w-full sm:w-1/3 max-w-xs p-4 sm:px-2 z-10 animated FadeUp  sm:anim-delay-05">
                 <p className="before-02">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Nesciunt soluta natus cum qui facilis repudiandae sapiente
                   modi tempore dolores commodi!
                 </p>
-              </div>
-              <div className="w-full sm:w-1/3 max-w-xs p-4 sm:pr-0 z-10   sm:anim-delay-06">
+              </InViewComp>
+              <InViewComp className="w-full sm:w-1/3 max-w-xs p-4 sm:pr-0 z-10 animated FadeUp  sm:anim-delay-06">
                 <p className="before-03">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Nesciunt soluta natus cum qui facilis repudiandae sapiente
                   modi tempore dolores commodi!
                 </p>
-              </div>
+              </InViewComp>
             </div>
           </div>
         </div>
@@ -123,7 +128,7 @@ function IndexPage() {
           </h2>
           <div className="flex flex-col sm:flex-row self-center text-left max-w-5xl overflow-hidden">
             <div className="flex w-full sm:w-1/2 ">
-              <div className="max-w-xs p-4 z-10    ">
+              <InViewComp className="max-w-xs p-4 z-10 animated FadeUp">
                 <img
                   className=" rounded-lg mb-4"
                   src={personPhoto}
@@ -131,8 +136,8 @@ function IndexPage() {
                 />
                 <p className="font-bold text-indigo-100">Erlends Morozo</p>
                 <p className="text-indigo-200">Project Manager</p>
-              </div>
-              <div className=" max-w-xs  p-4 z-10    anim-delay-05">
+              </InViewComp>
+              <InViewComp className=" max-w-xs  p-4 z-10 animated FadeUp anim-delay-05">
                 <img
                   className=" rounded-lg mb-4"
                   src={personPhoto}
@@ -142,10 +147,10 @@ function IndexPage() {
                   Vladimir Radionovsky
                 </p>
                 <p className="text-indigo-200">Web developer</p>
-              </div>
+              </InViewComp>
             </div>
             <div className="flex w-fit  w-full sm:w-1/2 ">
-              <div className=" max-w-xs p-4 z-10    anim-delay-06">
+              <InViewComp className=" max-w-xs p-4 z-10 animated FadeUp   anim-delay-06">
                 <img
                   className=" rounded-lg mb-4"
                   src={personPhoto}
@@ -153,8 +158,8 @@ function IndexPage() {
                 />
                 <p className="font-bold text-indigo-200">John Doe</p>
                 <p className="text-indigo-200">Creative Director</p>
-              </div>
-              <div className=" max-w-xs p-4 z-10    anim-delay-07">
+              </InViewComp>
+              <InViewComp className=" max-w-xs p-4 z-10  animated FadeUp  anim-delay-07">
                 <img
                   className=" rounded-lg mb-4"
                   src={personPhoto}
@@ -162,7 +167,7 @@ function IndexPage() {
                 />
                 <p className="font-bold text-indigo-200">John Doe</p>
                 <p className="text-indigo-200">Creative Director</p>
-              </div>
+              </InViewComp>
             </div>
           </div>
         </div>
@@ -184,14 +189,17 @@ function IndexPage() {
 
       <section id="get-in-touch" className="bg-coolGray-100">
         <div className="min-h-screen max-w-80 mx-auto flex flex-col justify-center px-6 sm:px-10 lg:px-16 ">
-          <div id="form-main-page" className=" w-full pt-12 pb-32 md:pb-40 ">
+          <InViewComp
+            id="form-main-page"
+            className=" w-full pt-12 pb-32 md:pb-40 animated FadeUp"
+          >
             <div className="max-w-lg mx-auto p-4 sm:p-6 shadow-lg sm:shadow-2xl rounded-lg bg-white z-10  text-coolGray-800 border-coolGray-200 ">
               <h2 className="text-4xl font-bold h-fit pb-6 underline max-w-lg mx-auto text-coolGray-900">
                 Contact Us
               </h2>
               <ContactForm />
             </div>
-          </div>
+          </InViewComp>
         </div>
       </section>
       <Waves />

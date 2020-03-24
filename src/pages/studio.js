@@ -4,6 +4,7 @@ import SEO from "../components/seo";
 import Waves from "../components/waves";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
+import InViewComp from "../components/inViewComp";
 
 function Studio() {
   const { image } = useStaticQuery(graphql`
@@ -55,7 +56,7 @@ function Studio() {
           </h2>
           <div id="points" className="flex flex-wrap max-w-5xl">
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
                   Websites for everyone
                 </h6>
@@ -64,10 +65,10 @@ function Studio() {
                   or computer. Websites we build remain beautiful and highly
                   functional whether on a computer or a tablet.
                 </p>
-              </div>
+              </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
                   We are in it for the long run
                 </h6>
@@ -76,10 +77,10 @@ function Studio() {
                   to add some new content? Or just need someone to look after
                   your website? We will take care of it.
                 </p>
-              </div>
+              </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
                   A new generation business
                 </h6>
@@ -87,10 +88,10 @@ function Studio() {
                   We do not like the old way of doing things. We are the new
                   generation. We love to bring new innovations to the table.
                 </p>
-              </div>
+              </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
                   Sometimes less is more
                 </h6>
@@ -101,10 +102,10 @@ function Studio() {
                   principles in mind. They cut out the unnecessary and add only
                   something that brings value.
                 </p>
-              </div>
+              </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
                   Tailored experience
                 </h6>
@@ -113,10 +114,10 @@ function Studio() {
                   bring it to life. Every project is unique and we are always
                   excited to find new solutions.
                 </p>
-              </div>
+              </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
                   Beauty in functionality
                 </h6>
@@ -125,10 +126,10 @@ function Studio() {
                   thing in common – our websites remain beautiful yet highly
                   functional.
                 </p>
-              </div>
+              </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 sm:mb-0 px-0 sm:px-6">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
                   Trust and communication
                 </h6>
@@ -136,16 +137,16 @@ function Studio() {
                   It seems obvious but often is forgotten. Communication leads
                   to building trust and vice versa.
                 </p>
-              </div>
+              </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-0 px-0 sm:px-6">
-              <div className="max-w-sm mx-auto point  ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">From A to Z</h6>
                 <p className=" font-medium leading-relaxed">
                   Need a fresh design or some text for your website? Do not
                   worry. We have got you covered trough the whole ride.
                 </p>
-              </div>
+              </InViewComp>
             </div>
           </div>
         </div>
