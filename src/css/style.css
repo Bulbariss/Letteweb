@@ -675,6 +675,7 @@ header {
   left: 0;
   top: -15%;
   color: #333;
+  visibility: visible;
 }
 
 #mooving-letters span.sym-0::after {

@@ -25,10 +25,7 @@ function IndexPage() {
 
   return (
     <Layout>
-      <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Home"
-      />
+      <SEO keywords={[`letteweb`]} title="Home" />
       <BackgroundImage
         className="min-h-screen flex"
         Tag="section"

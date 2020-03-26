@@ -5,6 +5,8 @@ import Waves from "../components/waves";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import InViewComp from "../components/inViewComp";
+import Split from "../components/split";
+import MoovingLetters from "../components/moovingLetters";
 
 function Studio() {
   const { image } = useStaticQuery(graphql`
@@ -18,9 +20,10 @@ function Studio() {
       }
     }
   `);
+
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <SEO keywords={[`letteweb`]} title="Studio" />
 
       <BackgroundImage
         className="min-h-screen flex"
@@ -30,22 +33,9 @@ function Studio() {
         id="studio-hero"
       >
         <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16">
-          <div className="mr-auto">
-            <h1
-              className="text-2xl sm:text-3xl font-bold max-w-2xl text-transparent"
-              id="mooving-letters"
-              data-splitting
-            >
-              We strongly believe that implementing a few fundamental work ethic
-              principles will allow our team to work, communicate and bring
-              value to our customers more efficiently.
-            </h1>
-            <h1 className="hidden" id="mooving-letters-hidden">
-              We strongly believe that implementing a few fundamental work ethic
-              principles will allow our team to work, communicate and bring
-              value to our customers more efficiently.
-            </h1>
-          </div>
+          <Split>
+            <MoovingLetters />
+          </Split>
         </div>
       </BackgroundImage>
 

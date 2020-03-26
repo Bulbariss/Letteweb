@@ -9,10 +9,7 @@ import Particles from "react-particles-js";
 function ContactPage() {
   return (
     <Layout>
-      <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Contact"
-      />
+      <SEO keywords={[`letteweb`]} title="Contact" />
 
       <section className="min-h-screen flex justify-center text-coolGray-800">
         <div
