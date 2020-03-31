@@ -34,7 +34,7 @@ function Header() {
       <header className="fixed w-full">
         <div className="max-w-80 flex mx-auto h-full items-center px-6 sm:px-10 lg:px-16 relative">
           <div className="logo mr-auto w-auto h-auto">
-            <Link className="text-2xl let-space-3 font-bold" to="/">
+            <Link className="text-2xl let-space-3 font-black" to="/">
               LETTEWEB
             </Link>
           </div>
@@ -47,7 +47,7 @@ function Header() {
               >
                 <span
                   data-letters={link.title}
-                  className="leading-tight font-medium"
+                  className="leading-tight font-bold"
                 >
                   {link.title}
                 </span>
@@ -61,7 +61,7 @@ function Header() {
               role="button"
               tabIndex="0"
             >
-              <span className="leading-tight font-medium" data-letters="EN">
+              <span className="leading-tight font-bold" data-letters="EN">
                 EN
               </span>
             </div>
@@ -79,7 +79,7 @@ function Header() {
                   className="link-animation noSelect px-4 py-3 w-full"
                 >
                   <span
-                    className="leading-tight font-medium"
+                    className="leading-tight font-bold"
                     data-letters={link.title}
                   >
                     {link.title}

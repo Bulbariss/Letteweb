@@ -45,6 +45,7 @@ function ContactPage() {
         </div>
         <div id="particles-js">
           <Particles
+            id="123"
             params={{
               particles: {
                 number: {

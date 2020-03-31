@@ -24,34 +24,6 @@ class ContactForm extends React.Component {
     this.validateMessage = this.validateMessage.bind(this);
   }
 
-  showError() {
-    this.setState({
-      isError: true
-    });
-
-    setTimeout(() => {
-      this.setState({
-        isError: false,
-        isSending: false
-      });
-      this.clearForm();
-    }, 5000);
-  }
-
-  showSuccess() {
-    this.setState({
-      isSent: true
-    });
-
-    setTimeout(() => {
-      this.setState({
-        isSent: false,
-        isSending: false
-      });
-      this.clearForm();
-    }, 5000);
-  }
-
   handleSubmit() {
     this.validateName();
     this.validateEmail();
@@ -96,8 +68,6 @@ class ContactForm extends React.Component {
     });
   }
 
-  // const regexName = /^[а-яА-ЯёЁa-zA-Z0-9]+$/i;
-
   validateName() {
     if (this.state.name) {
       this.setState({
@@ -110,7 +80,8 @@ class ContactForm extends React.Component {
     }
   }
   validateEmail() {
-    if (this.state.email) {
+    const emailRegex = /^\S+@\S+\.\S+$/i;
+    if (this.state.email && emailRegex.test(this.state.email)) {
       this.setState({
         isEmailValid: true
       });
@@ -159,45 +130,32 @@ class ContactForm extends React.Component {
     });
   }
 
-  // // Regex for validating inputs
-  // const regexName = /^[а-яА-ЯёЁa-zA-Z0-9]+$/i;
-  // const regexEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  showError() {
+    this.setState({
+      isError: true
+    });
 
-  // // Check if cell input is valid
-  // function validateName() {
-  //   const x = document.querySelector("#input-name").value;
-  //   if (regexName.test(x) || !x.length === 0) {
-  //     validInput("input-name");
-  //     name = true;
-  //   } else {
-  //     invalidInput("input-name");
-  //     name = false;
-  //   }
-  // }
+    setTimeout(() => {
+      this.setState({
+        isError: false,
+        isSending: false
+      });
+    }, 5000);
+  }
 
-  // // Check if cell input is valid
-  // function validateEmail() {
-  //   const x = document.querySelector("#input-email").value;
-  //   if (regexEmail.test(x) || !x.length === 0) {
-  //     validInput("input-email");
-  //     email = true;
-  //   } else {
-  //     invalidInput("input-email");
-  //     email = false;
-  //   }
-  // }
+  showSuccess() {
+    this.setState({
+      isSent: true
+    });
 
-  // // Check if cell input is valid
-  // function validateSubject() {
-  //   const x = document.querySelector("#input-subject").value;
-  //   if (!x.length === 0 || x.trim()) {
-  //     validInput("input-subject");
-  //     subject = true;
-  //   } else {
-  //     invalidInput("input-subject");
-  //     subject = false;
-  //   }
-  // }
+    setTimeout(() => {
+      this.setState({
+        isSent: false,
+        isSending: false
+      });
+      this.clearForm();
+    }, 5000);
+  }
 
   render() {
     return (
@@ -330,7 +288,7 @@ class ContactForm extends React.Component {
         >
           <p className="text-base">
             {`${this.state.isSending ? `` : `Submit`}
-             ${this.state.isError ? `Error, message not sent` : ``}
+             ${this.state.isError ? `Message not sent` : ``}
             ${this.state.isSent ? `Message Sent` : ``}`}
           </p>
           <div

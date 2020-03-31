@@ -1,14 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`
+    title: `Letteweb`,
+    description: `Web development studio`,
+    author: `me`
   },
   plugins: [
     "gatsby-plugin-eslint",
     `gatsby-plugin-react-helmet`,
     "gatsby-transformer-sharp",
-    // "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

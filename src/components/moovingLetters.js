@@ -142,7 +142,7 @@ function MoovingLetters() {
 
     setTimeout(() => {
       setInterval(swapText, 60);
-    }, 800);
+    }, 100);
 
     // function testq() {
     //    setInterval(swapText, 60);

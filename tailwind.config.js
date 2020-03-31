@@ -1,4 +1,3 @@
-// See https://tailwindcss.com/docs/configuration for details
 module.exports = {
   theme: {
     extend: {
@@ -53,6 +52,23 @@ module.exports = {
       },
       screens: {
         xxl: "1440px"
+      },
+      fontFamily: {
+        sans: [
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji"
+        ]
       }
     }
   },

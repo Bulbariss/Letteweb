@@ -6,9 +6,6 @@
 
 html {
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 canvas {
@@ -51,6 +48,52 @@ textarea::-webkit-input-placeholder {
   text-shadow: none;
 }
 
+/* Font Declaration */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/Inter-Black.woff2") format("woff2"),
+    url("../fonts/Inter-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/Inter-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Inter-Light.woff2") format("woff2"),
+    url("../fonts/Inter-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"),
+    url("../fonts/Inter-Medium.woff") format("woff");
+}
+
+/* Font Declaration */
+
 /* Classes */
 
 .btn-cc {
@@ -81,66 +124,6 @@ textarea::-webkit-input-placeholder {
 
 .padding-inline-start {
   padding-inline-start: 30px;
-}
-
-.TTNormsPro-Regular {
-  font-family: TTNormsPro-Regular;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-Normal {
-  font-family: TTNormsPro-Normal;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-ExtraLight {
-  font-family: TTNormsPro-ExtraLight;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-Light {
-  font-family: TTNormsPro-Light;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-Black {
-  font-family: TTNormsPro-Black;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-Thin {
-  font-family: TTNormsPro-Thin;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-Medium {
-  font-family: TTNormsPro-Medium;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-DemiBold {
-  font-family: TTNormsPro-DemiBold;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-Bold {
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.TTNormsPro-ExtraBold {
-  font-family: TTNormsPro-ExtraBold;
-  font-weight: normal;
-  font-style: normal;
 }
 
 .block-imp {
@@ -211,64 +194,56 @@ textarea::-webkit-input-placeholder {
 .before-01::before {
   content: "01";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 .before-02::before {
   content: "02";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 .before-03::before {
   content: "03";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 .before-04::before {
   content: "04";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 .before-05::before {
   content: "05";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 .before-06::before {
   content: "06";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 .before-07::before {
   content: "07";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 .before-08::before {
   content: "08";
   display: block;
-  font-family: TTNormsPro-Bold;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -1194,12 +1169,15 @@ canvas {
 #particles-js {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 712px;
   background-color: #e4e7eb;
   background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+}
+#particles-js div {
+  min-height: 712px;
 }
 
 #enable-navbar-invert {
