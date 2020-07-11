@@ -7,15 +7,22 @@ import indexEn from "../../public/locales/en/index.json";
 import indexLv from "../../public/locales/lv/index.json";
 import indexRu from "../../public/locales/ru/index.json";
 
+import studioEn from "../../public/locales/en/studio.json";
+import studioLv from "../../public/locales/lv/studio.json";
+import studioRu from "../../public/locales/ru/studio.json";
+
 const resources = {
   en: {
     index: indexEn,
+    studio: studioEn,
   },
   lv: {
     index: indexLv,
+    studio: studioLv,
   },
   ru: {
     index: indexRu,
+    studio: studioRu,
   },
 };
 

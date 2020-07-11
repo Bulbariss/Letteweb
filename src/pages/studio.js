@@ -6,8 +6,11 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import InViewComp from "../components/inViewComp";
 import MoovingLetters from "../components/MoovingLetters";
+import { useTranslation } from "react-i18next";
 
 function Studio() {
+  const { t } = useTranslation("studio");
+
   const { image } = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "bg-studio.jpg" }) {
@@ -34,9 +37,7 @@ function Studio() {
         <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16">
           <MoovingLetters
             className="text-3xl font-bold"
-            text="We strongly believe that implementing a few fundamental work ethic
-        principles will allow our team to work, communicate and bring value to
-        our customers more efficiently."
+            text={t("pageHeading")}
           />
         </div>
       </BackgroundImage>
@@ -44,48 +45,39 @@ function Studio() {
       <section className="bg-coolGray-050 px-6 sm:px-10 lg:px-16 text-coolGray-900 flex">
         <div className="max-w-80 self-center py-16 sm:py-20 xxl:py-24">
           <h2 className="text-5xl sm:text-4xl sm:text-center mb-16 sm:mb-20 xxl:mb-24 font-bold">
-            Our work principles
+            {t("workHeading")}
           </h2>
           <div id="points" className="flex flex-wrap max-w-5xl">
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
               <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">
-                  Websites for everyone
-                </h6>
+                <h6 className="text-2xl font-bold mb-4 ">{t("pointOne")}</h6>
                 <p className=" font-medium leading-relaxed">
-                  It does not matter if your client is using his phone, tablet
-                  or computer. Websites we build remain beautiful and highly
-                  functional whether on a computer or a tablet.
+                  {t("primaryButton")}
+                </p>
+              </InViewComp>
+            </div>
+            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
+              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
+                <h6 className="text-2xl font-bold mb-4 ">{t("pointTwo")}</h6>
+                <p className=" font-medium leading-relaxed">
+                  {t("primaryButton")}
                 </p>
               </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
               <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
-                  We are in it for the long run
+                  {t("primaryButton")}
                 </h6>
                 <p className=" font-medium leading-relaxed">
-                  We would prefer to keep working with other bright minds. Need
-                  to add some new content? Or just need someone to look after
-                  your website? We will take care of it.
+                  {t("primaryButton")}
                 </p>
               </InViewComp>
             </div>
             <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
               <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
                 <h6 className="text-2xl font-bold mb-4 ">
-                  A new generation business
-                </h6>
-                <p className=" font-medium leading-relaxed">
-                  We do not like the old way of doing things. We are the new
-                  generation. We love to bring new innovations to the table.
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">
-                  Sometimes less is more
+                  {t("primaryButton")}
                 </h6>
                 <p className=" font-medium leading-relaxed">
                   More often than not websites are overflowing with unnecessary
@@ -154,7 +146,7 @@ function Studio() {
               to="/contact"
               className="text-2xl font-bold h-fit sm:leading-none"
             >
-              Don&apos;t waste any more time, write to us!
+              {t("actionText")}
             </Link>
             <Link to="/contact" className="ml-4 ">
               <svg

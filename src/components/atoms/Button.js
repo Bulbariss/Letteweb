@@ -44,7 +44,7 @@ const Button = forwardRef(
     const VARIANTS = {
       solid: `bg-${color} text-${textColor} hover:bg-${hoverColor}`,
       outline: `border-2 border-${color} text-${textColor} hover:border-${hoverColor} hover:text-${
-        hoverColor || hoverTextColor
+        hoverTextColor || hoverColor
       }`,
       ghost: `text-${textColor} bg-transparent hover:bg-${hoverColor}`,
     };
@@ -82,14 +82,18 @@ const Button = forwardRef(
         </a>
       );
 
-      return isExternal ? (
-        a
-      ) : (
-        <Link className={classList} href={href} {...props}>
+      const b = (
+        <Link
+          className={classList}
+          to={href}
+          {...props}
+          style={{ borderRadius: "5px" }}
+        >
           {children}
-          <style jsx>{buttonStyles}</style>
         </Link>
       );
+
+      return isExternal ? a : b;
     }
 
     return (
