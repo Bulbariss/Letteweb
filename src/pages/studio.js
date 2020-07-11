@@ -5,8 +5,7 @@ import Waves from "../components/waves";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import InViewComp from "../components/inViewComp";
-import Split from "../components/split";
-import MoovingLetters from "../components/moovingLetters";
+import MoovingLetters from "../components/MoovingLetters";
 
 function Studio() {
   const { image } = useStaticQuery(graphql`
@@ -33,9 +32,12 @@ function Studio() {
         id="studio-hero"
       >
         <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16">
-          <Split>
-            <MoovingLetters />
-          </Split>
+          <MoovingLetters
+            className="text-3xl font-bold"
+            text="We strongly believe that implementing a few fundamental work ethic
+        principles will allow our team to work, communicate and bring value to
+        our customers more efficiently."
+          />
         </div>
       </BackgroundImage>
 

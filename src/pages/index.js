@@ -9,8 +9,11 @@ import mouseSvg from "../images/mouse.svg";
 import teamPhoto from "../images/team.jpg";
 import personPhoto from "../images/person2.jpg";
 import InViewComp from "../components/inViewComp";
+import { useTranslation } from "react-i18next";
 
 function IndexPage() {
+  const { t } = useTranslation("index");
+
   const { image } = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "bg-hero.jpg" }) {
@@ -33,12 +36,11 @@ function IndexPage() {
         fadeIn="soft"
       >
         <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center ">
-          <h1 className="font-bold text-4xl mt-0 sm:mt-12 md:text-6xl  max-w-4xl leading-none mx-auto">
-            New generation of <br /> web development
+          <h1 className="font-bold text-4xl mt-0 sm:mt-12 md:text-6xl  max-w-4xl leading-none mx-auto whitespace-pre-line">
+            {t("heading")}
           </h1>
           <p className="text-2xl md:text-2xl lg:text-3xl leading-snug  text-muted-black max-w-sm lg:max-w-xl mx-auto mt-4">
-            We create websites for businesses that provide great experience for
-            their users.
+            {t("secondHeading")}
           </p>
           <Link
             to="/contact"
@@ -47,7 +49,7 @@ function IndexPage() {
                 w-fit px-8
                 sm:mx-auto shadow-2xl"
           >
-            Get in touch
+            {t("primaryButton")}
           </Link>
         </div>
         <img
@@ -73,9 +75,7 @@ function IndexPage() {
               <div className="sm:pr-8  max-w-2xl sm:w-1/2 self-center z-10">
                 <InViewComp className="max-w-md mt-8 sm:mt-0 ">
                   <h2 className="text-2xl sm:text-lg lg:text-2xl font-bold text-coolGray-900 leading-snug animated FadeRight">
-                    Combining modern design with science proved principles
-                    allows us to create beautiful and functional websites that
-                    bring customers to your business.
+                    {t("testimony")}
                   </h2>
                 </InViewComp>
                 <Link

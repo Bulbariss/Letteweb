@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 function NotFoundPage() {
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <SEO title="Privacy Policy" />
       <section>
         <div className="px-6 sm:px-10 lg:px-16 mx-auto pt-24 py-10 text-lg relative max-w-2xl text-muted-black">
           <h1 className="mb-4 text-4xl font-bold">Privacy Policy</h1>
