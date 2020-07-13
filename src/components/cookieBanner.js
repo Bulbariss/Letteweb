@@ -126,7 +126,7 @@ class CookieBanner extends React.Component {
             <button
               onClick={this.handleAllowCookies}
               id="btn-allow-cookies"
-              className="btn-cc text-white bg-indigo-700 hover:bg-indigo-600 ml-4 rounded-lg "
+              className="btn-cc text-white bg-indigo-700 hover:bg-indigo-600 ml-4 rounded-lg"
             >
               Allow cookies
             </button>

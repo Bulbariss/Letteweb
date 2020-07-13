@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import ContactForm from "../components/contactForm";
+import ContactForm from "../components/organisms/ContactForm";
 import { Link } from "gatsby";
 import Particles from "react-particles-js";
 
@@ -18,7 +18,7 @@ function ContactPage() {
         >
           <div className="flex flex-col max-w-4xl md:flex-row bg-white rounded-lg w-fit shadow-2xl">
             <div className="pb-0 p-4 sm:px-6 sm:pt-6 md:pb-6 relative w-full">
-              <h1 className="text-3xl md:text-4xl text-coolGray-900">
+              <h1 className="text-3xl md:text-4xl text-coolGray-900 leading-snug font-bold">
                 We&apos;ll be glad to hear from you.
               </h1>
               <div className="absolute bottom-0 pb-4 sm:pb-6 hidden md:block">
@@ -45,33 +45,34 @@ function ContactPage() {
         </div>
         <div id="particles-js">
           <Particles
+            style={{ position: "absolute" }}
             id="123"
             params={{
               particles: {
                 number: {
-                  value: 142,
+                  value: 100,
                   density: {
                     enable: true,
-                    value_area: 800
-                  }
+                    value_area: 800,
+                  },
                 },
                 color: {
-                  value: "#000000"
+                  value: "#000000",
                 },
                 shape: {
                   type: "circle",
                   stroke: {
                     width: 0,
-                    color: "#000000"
+                    color: "#000000",
                   },
                   polygon: {
-                    nb_sides: 5
+                    nb_sides: 5,
                   },
                   image: {
                     src: "img/github.svg",
                     width: 100,
-                    height: 100
-                  }
+                    height: 100,
+                  },
                 },
                 opacity: {
                   value: 0.5,
@@ -80,8 +81,8 @@ function ContactPage() {
                     enable: false,
                     speed: 1,
                     opacity_min: 0.1,
-                    sync: false
-                  }
+                    sync: false,
+                  },
                 },
                 size: {
                   value: 3,
@@ -90,15 +91,15 @@ function ContactPage() {
                     enable: false,
                     speed: 40,
                     size_min: 0.1,
-                    sync: false
-                  }
+                    sync: false,
+                  },
                 },
                 line_linked: {
                   enable: true,
                   distance: 150,
                   color: "#000000",
                   opacity: 0.4,
-                  width: 1
+                  width: 1,
                 },
                 move: {
                   enable: true,
@@ -111,50 +112,50 @@ function ContactPage() {
                   attract: {
                     enable: false,
                     rotateX: 600,
-                    rotateY: 1200
-                  }
-                }
+                    rotateY: 1200,
+                  },
+                },
               },
               interactivity: {
                 detect_on: "canvas",
                 events: {
                   onhover: {
                     enable: false,
-                    mode: "repulse"
+                    mode: "repulse",
                   },
                   onclick: {
                     enable: false,
-                    mode: "push"
+                    mode: "push",
                   },
-                  resize: true
+                  resize: true,
                 },
                 modes: {
                   grab: {
                     distance: 400,
                     line_linked: {
-                      opacity: 1
-                    }
+                      opacity: 1,
+                    },
                   },
                   bubble: {
                     distance: 400,
                     size: 40,
                     duration: 2,
                     opacity: 8,
-                    speed: 3
+                    speed: 3,
                   },
                   repulse: {
                     distance: 200,
-                    duration: 0.4
+                    duration: 0.4,
                   },
                   push: {
-                    particles_nb: 4
+                    particles_nb: 4,
                   },
                   remove: {
-                    particles_nb: 2
-                  }
-                }
+                    particles_nb: 2,
+                  },
+                },
               },
-              retina_detect: true
+              retina_detect: true,
             }}
           />
         </div>

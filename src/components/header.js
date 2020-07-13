@@ -7,26 +7,26 @@ function Header() {
   const links = [
     {
       route: `/projects`,
-      title: `PROJECTS`
+      title: `PROJECTS`,
     },
     {
       route: `/studio`,
-      title: `STUDIO`
+      title: `STUDIO`,
     },
     {
       route: `/contact`,
-      title: `CONTACT`
-    }
+      title: `CONTACT`,
+    },
   ];
   const langList = [
     {
       route: `/lv`,
-      title: `LV`
+      title: `LV`,
     },
     {
       route: `/ru`,
-      title: `RU`
-    }
+      title: `RU`,
+    },
   ];
 
   return (
@@ -39,7 +39,7 @@ function Header() {
             </Link>
           </div>
           <nav className="ml-auto w-auto h-auto text-sm  hidden sm:flex">
-            {links.map(link => (
+            {links.map((link) => (
               <Link
                 className="link-animation noSelect px-4 py-3"
                 key={link.title}
@@ -72,7 +72,7 @@ function Header() {
               sm:mx-10 lg:mx-16 text-sm`}
               id="lang-list"
             >
-              {langList.map(link => (
+              {langList.map((link) => (
                 <Link
                   key={link.title}
                   to={link.route}
@@ -91,7 +91,7 @@ function Header() {
 
           <div
             id="menuToggle"
-            className={`${isMenuExpanded ? `active` : ` `} block sm:hidden`}
+            className={`${isMenuExpanded ? `active` : ""} block sm:hidden`}
           >
             <label htmlFor="checkbox" className="label">
               <input
@@ -109,7 +109,7 @@ function Header() {
       <nav id="menu" className={`${isMenuExpanded ? `active` : ` `} sm:hidden`}>
         <div id="menu-items" className="font-bold">
           <ul>
-            {links.map(link => (
+            {links.map((link) => (
               <li className="nav-list-item" key={link.title}>
                 <Link className="link-animation noSelect" to={link.route}>
                   <span data-letters={link.title}>{link.title}</span>
@@ -122,7 +122,7 @@ function Header() {
                 <span data-letters="EN">EN</span>
               </div>
 
-              {langList.map(link => (
+              {langList.map((link) => (
                 <Link
                   className="link-animation noSelect"
                   key={link.title}

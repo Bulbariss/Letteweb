@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
-import useIntersect from "./utils/useIntersect";
+import { useInView } from "react-intersection-observer";
 
-function MoovingLetters({ text, className, triggerOnce = true }) {
+function MoovingLetters({ text, className, delay = 1500, triggerOnce = true }) {
   let charPosition = useRef(-1);
   let iteration = useRef(0);
   let letters = useRef(text.replace(/\s/g, ""));
@@ -10,8 +10,8 @@ function MoovingLetters({ text, className, triggerOnce = true }) {
   const textWrapper = useRef(null);
   const requestRef = useRef(null);
   const wasTriggered = useRef(false);
-  const [ref, entry] = useIntersect({
-    threshold: 0,
+  const [ref, inView] = useInView({
+    triggerOnce: triggerOnce,
   });
 
   function splitText(str) {
@@ -65,217 +65,218 @@ function MoovingLetters({ text, className, triggerOnce = true }) {
   }, []);
 
   useEffect(() => {
-    if (entry.isIntersecting && (!wasTriggered.current || !triggerOnce)) {
+    if (inView) {
       wasTriggered.current = true;
       setTimeout(() => {
         requestRef.current = requestAnimationFrame(changeClassNames);
-      }, 1500);
+      }, delay);
     }
 
     return () => cancelAnimationFrame(requestRef.current);
-  }, [entry.isIntersecting]);
+  }, [inView]);
 
   return (
     <div ref={ref}>
-      <div ref={textWrapper} className={className} id="mooving-letters"></div>
-      <style jsx>{`
-        #mooving-letters .word {
-          position: relative;
-          display: inline-block;
-        }
+      <div ref={textWrapper} className={className} id="mooving-letters">
+        <style global jsx>{`
+          #mooving-letters > .word {
+            position: relative;
+            display: inline-block;
+          }
 
-        #mooving-letters span.char,
-        #mooving-letters-invisible span.char {
-          position: relative;
-          color: transparent;
-        }
+          #mooving-letters span.char,
+          #mooving-letters-invisible span.char {
+            position: relative;
+            color: transparent;
+          }
 
-        #mooving-letters span.sym-0,
-        #mooving-letters-invisible span.sym-0 {
-          color: #333;
-        }
+          #mooving-letters span.sym-0,
+          #mooving-letters-invisible span.sym-0 {
+            color: #333;
+          }
 
-        #mooving-letters span.char::after,
-        #mooving-letters-invisible span.char::after {
-          position: absolute;
-          left: 0;
-          top: -15%;
-          color: #333;
-          visibility: visible;
-        }
+          #mooving-letters span.char::after,
+          #mooving-letters-invisible span.char::after {
+            position: absolute;
+            left: 0;
+            top: -15%;
+            color: #333;
+            visibility: visible;
+          }
 
-        #mooving-letters span.sym-0::after {
-          content: "";
-        }
+          #mooving-letters span.sym-0::after {
+            content: "";
+          }
 
-        #mooving-letters span.sym-1::after {
-          content: "¡";
-        }
+          #mooving-letters span.sym-1::after {
+            content: "¡";
+          }
 
-        #mooving-letters span.sym-2::after {
-          content: "™";
-        }
+          #mooving-letters span.sym-2::after {
+            content: "™";
+          }
 
-        #mooving-letters span.sym-3::after {
-          content: "£";
-        }
+          #mooving-letters span.sym-3::after {
+            content: "£";
+          }
 
-        #mooving-letters span.sym-4::after {
-          content: "¢";
-        }
+          #mooving-letters span.sym-4::after {
+            content: "¢";
+          }
 
-        #mooving-letters span.sym-5::after {
-          content: "∞";
-        }
+          #mooving-letters span.sym-5::after {
+            content: "∞";
+          }
 
-        #mooving-letters span.sym-6::after {
-          content: "§";
-        }
+          #mooving-letters span.sym-6::after {
+            content: "§";
+          }
 
-        #mooving-letters span.sym-7::after {
-          content: "¶";
-        }
+          #mooving-letters span.sym-7::after {
+            content: "¶";
+          }
 
-        #mooving-letters span.sym-8::after {
-          content: "•";
-        }
+          #mooving-letters span.sym-8::after {
+            content: "•";
+          }
 
-        #mooving-letters span.sym-9::after {
-          content: "ª";
-        }
+          #mooving-letters span.sym-9::after {
+            content: "ª";
+          }
 
-        #mooving-letters span.sym-10::after {
-          content: "≠";
-        }
+          #mooving-letters span.sym-10::after {
+            content: "≠";
+          }
 
-        #mooving-letters span.sym-11::after {
-          content: "å";
-        }
+          #mooving-letters span.sym-11::after {
+            content: "å";
+          }
 
-        #mooving-letters span.sym-12::after {
-          content: "ß";
-        }
+          #mooving-letters span span.sym-12::after {
+            content: "ß";
+          }
 
-        #mooving-letters span.sym-13::after {
-          content: "∂";
-        }
+          #mooving-letters span.sym-13::after {
+            content: "∂";
+          }
 
-        #mooving-letters span.sym-14::after {
-          content: "©";
-        }
+          #mooving-letters span.sym-14::after {
+            content: "©";
+          }
 
-        #mooving-letters span.sym-15::after {
-          content: "∆";
-        }
+          #mooving-letters span.sym-15::after {
+            content: "∆";
+          }
 
-        #mooving-letters span.sym-16::after {
-          content: "˚";
-        }
+          #mooving-letters span.sym-16::after {
+            content: "˚";
+          }
 
-        #mooving-letters span.sym-17::after {
-          content: "œ";
-        }
+          #mooving-letters span.sym-17::after {
+            content: "œ";
+          }
 
-        #mooving-letters span.sym-18::after {
-          content: "®";
-        }
+          #mooving-letters span.sym-18::after {
+            content: "®";
+          }
 
-        #mooving-letters span.sym-19::after {
-          content: "†";
-        }
+          #mooving-letters span.sym-19::after {
+            content: "†";
+          }
 
-        #mooving-letters span.sym-20::after {
-          content: "¥";
-        }
+          #mooving-letters span.sym-20::after {
+            content: "¥";
+          }
 
-        #mooving-letters span.sym-21::after {
-          content: "π";
-        }
+          #mooving-letters span.sym-21::after {
+            content: "π";
+          }
 
-        #mooving-letters span.sym-22::after {
-          content: "≈";
-        }
+          #mooving-letters span.sym-22::after {
+            content: "≈";
+          }
 
-        #mooving-letters span.sym-23::after {
-          content: "√";
-        }
+          #mooving-letters span.sym-23::after {
+            content: "√";
+          }
 
-        #mooving-letters span.sym-24::after {
-          content: "∫";
-        }
+          #mooving-letters span.sym-24::after {
+            content: "∫";
+          }
 
-        #mooving-letters span.sym-25::after {
-          content: "…";
-        }
+          #mooving-letters span.sym-25::after {
+            content: "…";
+          }
 
-        #mooving-letters span.sym-26::after {
-          content: "ç";
-        }
+          #mooving-letters span.sym-26::after {
+            content: "ç";
+          }
 
-        #mooving-letters span.sym-27::after {
-          content: "√";
-        }
+          #mooving-letters span.sym-27::after {
+            content: "√";
+          }
 
-        #mooving-letters span.sym-28::after {
-          content: "ø";
-        }
+          #mooving-letters span.sym-28::after {
+            content: "ø";
+          }
 
-        #mooving-letters span.sym-29::after {
-          content: "¨";
-        }
+          #mooving-letters span.sym-29::after {
+            content: "¨";
+          }
 
-        #mooving-letters span.sym-30::after {
-          content: "˜";
-        }
+          #mooving-letters span.sym-30::after {
+            content: "˜";
+          }
 
-        #mooving-letters span.sym-31::after {
-          content: "µ";
-        }
+          #mooving-letters span.sym-31::after {
+            content: "µ";
+          }
 
-        #mooving-letters span.sym-32::after {
-          content: "≤";
-        }
+          #mooving-letters span.sym-32::after {
+            content: "≤";
+          }
 
-        #mooving-letters span.sym-33::after {
-          content: "≥";
-        }
+          #mooving-letters span.sym-33::after {
+            content: "≥";
+          }
 
-        #mooving-letters span.sym-34::after {
-          content: "÷";
-        }
+          #mooving-letters span.sym-34::after {
+            content: "÷";
+          }
 
-        #mooving-letters span.sym-35::after {
-          content: "?";
-        }
+          #mooving-letters span.sym-35::after {
+            content: "?";
+          }
 
-        #mooving-letters span.sym-36::after {
-          content: "|";
-        }
+          #mooving-letters span.sym-36::after {
+            content: "|";
+          }
 
-        #mooving-letters span.sym-37::after {
-          content: "░";
-        }
+          #mooving-letters span.sym-37::after {
+            content: "░";
+          }
 
-        #mooving-letters span.sym-38::after {
-          content: "▒";
-        }
+          #mooving-letters span.sym-38::after {
+            content: "▒";
+          }
 
-        #mooving-letters span.sym-39::after {
-          content: "▓";
-        }
+          #mooving-letters span.sym-39::after {
+            content: "▓";
+          }
 
-        #mooving-letters span.sym-40::after {
-          content: "<";
-        }
+          #mooving-letters span.sym-40::after {
+            content: "<";
+          }
 
-        #mooving-letters span.sym-41::after {
-          content: ">";
-        }
+          #mooving-letters span.sym-41::after {
+            content: ">";
+          }
 
-        #mooving-letters span.sym-42::after {
-          content: "/";
-        }
-      `}</style>
+          #mooving-letters span.sym-42::after {
+            content: "/";
+          }
+        `}</style>
+      </div>
     </div>
   );
 }

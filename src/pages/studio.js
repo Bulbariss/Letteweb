@@ -4,12 +4,47 @@ import SEO from "../components/seo";
 import Waves from "../components/waves";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
-import InViewComp from "../components/inViewComp";
 import MoovingLetters from "../components/MoovingLetters";
 import { useTranslation } from "react-i18next";
+import StudioCard from "../components/atoms/StudioCard";
 
 function Studio() {
   const { t } = useTranslation("studio");
+
+  const points = [
+    {
+      heading: t("pointOne"),
+      text: t("textOne"),
+    },
+    {
+      heading: t("pointTwo"),
+      text: t("textTwo"),
+    },
+    {
+      heading: t("pointThree"),
+      text: t("textThree"),
+    },
+    {
+      heading: t("pointFour"),
+      text: t("textFour"),
+    },
+    {
+      heading: t("pointFive"),
+      text: t("textFive"),
+    },
+    {
+      heading: t("pointSix"),
+      text: t("textSix"),
+    },
+    {
+      heading: t("pointSeven"),
+      text: t("textSeven"),
+    },
+    {
+      heading: t("pointEight"),
+      text: t("textEight"),
+    },
+  ];
 
   const { image } = useStaticQuery(graphql`
     query {
@@ -48,90 +83,9 @@ function Studio() {
             {t("workHeading")}
           </h2>
           <div id="points" className="flex flex-wrap max-w-5xl">
-            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">{t("pointOne")}</h6>
-                <p className=" font-medium leading-relaxed">
-                  {t("primaryButton")}
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">{t("pointTwo")}</h6>
-                <p className=" font-medium leading-relaxed">
-                  {t("primaryButton")}
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">
-                  {t("primaryButton")}
-                </h6>
-                <p className=" font-medium leading-relaxed">
-                  {t("primaryButton")}
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6 ">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">
-                  {t("primaryButton")}
-                </h6>
-                <p className=" font-medium leading-relaxed">
-                  More often than not websites are overflowing with unnecessary
-                  additions. Rather than bringing value they increase expenses.
-                  We do it differently. Our team works with minimalistic
-                  principles in mind. They cut out the unnecessary and add only
-                  something that brings value.
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">
-                  Tailored experience
-                </h6>
-                <p className=" font-medium leading-relaxed">
-                  Whatever idea you may have. We will do everything we can to
-                  bring it to life. Every project is unique and we are always
-                  excited to find new solutions.
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-16 px-0 sm:px-6">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">
-                  Beauty in functionality
-                </h6>
-                <p className=" font-medium leading-relaxed">
-                  Each project is different. Nevertheless all of them have one
-                  thing in common – our websites remain beautiful yet highly
-                  functional.
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-16 sm:mb-0 px-0 sm:px-6">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">
-                  Trust and communication
-                </h6>
-                <p className=" font-medium leading-relaxed">
-                  It seems obvious but often is forgotten. Communication leads
-                  to building trust and vice versa.
-                </p>
-              </InViewComp>
-            </div>
-            <div className="w-full sm:w-1/2 mb-0 px-0 sm:px-6">
-              <InViewComp className="max-w-sm mx-auto point  animated FadeUp">
-                <h6 className="text-2xl font-bold mb-4 ">From A to Z</h6>
-                <p className=" font-medium leading-relaxed">
-                  Need a fresh design or some text for your website? Do not
-                  worry. We have got you covered trough the whole ride.
-                </p>
-              </InViewComp>
-            </div>
+            {points.map((i) => (
+              <StudioCard key={i.heading} heading={i.heading} text={i.text} />
+            ))}
           </div>
         </div>
       </section>

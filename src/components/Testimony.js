@@ -1,15 +1,22 @@
-import React, { useRef } from "react";
+import React from "react";
+import { useInView } from "react-intersection-observer";
 
-function Testimonies(text) {
-    
+function Testimony({ children, className, ...props }) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: "0.8",
+  });
+
   return (
-        { text.map((i, k) => (
-            <div className="w-full sm:w-1/3 max-w-xs p-4 sm:pl-0 z-10 animated FadeUp">
-        <p className="before-01">
-          {i}
-        </p>
-      </div>
-        ))}     
+    <p
+      {...props}
+      ref={ref}
+      className={`w-full sm:w-1/3 max-w-xs p-4 sm:px-2 z-10 ${
+        inView ? "anim" : ""
+      } animated  ${className}`}
+    >
+      {children}
+    </p>
     //   <div className="w-full sm:w-1/3 max-w-xs p-4 sm:px-2 z-10 animated FadeUp  sm:anim-delay-05">
     //     <p className="before-02">
     //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
@@ -25,6 +32,6 @@ function Testimonies(text) {
     //     </p>
     //   </div>
   );
-};
+}
 
-export default Testimonies;
+export default Testimony;

@@ -1,18 +1,8 @@
 import { Link } from "gatsby";
-import React, { useState } from "react";
-import CookieBanner from "./cookieBanner";
+import React from "react";
+import CookieButtons from "./atoms/CookieButtons";
 
 function Footer() {
-  const [isCookieBannerOpened, showBanner] = useState(false);
-
-  function handleOnClick() {
-    console.log("/");
-    showBanner(!isCookieBannerOpened);
-    setTimeout(() => {
-      showBanner(!isCookieBannerOpened);
-    }, 100);
-  }
-
   return (
     <>
       <footer id="footer" className="bg-indigo-1000">
@@ -32,7 +22,7 @@ function Footer() {
           </div>
           <div className="item w-full pt-10 flex flex-col-reverse sm:flex-row">
             <div className="w-full sm:w-full flex flex-col-reverse">
-              <div className="h-fit mt-2">
+              {/* <div className="h-fit mt-2">
                 <Link className="hover-opacity" to="/privacy_policy">
                   Privacy Policy &#32;
                 </Link>
@@ -45,7 +35,12 @@ function Footer() {
                 >
                   Cookie preferences
                 </button>
-              </div>
+              </div> */}
+              <CookieButtons
+                classes={
+                  "order-1 md:order-2 w-full md:w-auto text-sm md:text-base pt-2 md:pt-0"
+                }
+              />
               <p className="h-fit mt-auto">© 2019, Letteweb</p>
             </div>
             <div className="w-full sm:w-full flex pb-12 sm:pb-0">
@@ -74,8 +69,6 @@ function Footer() {
           </div>
         </div>
       </footer>
-
-      <CookieBanner isCookieBannerOpened={isCookieBannerOpened} />
     </>
   );
 }
