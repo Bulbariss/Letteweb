@@ -33,15 +33,15 @@ function CookieBanner({
 
   return (
     <div
-      className={`fixed bottom-0 right-0 w-full pb-6 px-2 sm:px-4 z-50 text-dark ${
+      className={`fixed bottom-0 right-0 w-full pb-6 px-2 sm:px-4 z-50 ${
         !visibility && "hidden"
       }`}
     >
       <div
         id="cookie-banner-container"
-        className="max-w-80 bg-indigo-200 flex rounded-lg py-4 sm:py-2 items-center flex-col sm:flex-row px-4 w-fit "
+        className="max-w-80 bg-indigo-200 flex rounded-lg py-4 sm:py-2 items-center flex-col sm:flex-row  px-4 w-fit "
       >
-        <p className="h-fit text-coolgrey-900 pb-2 md:pb-0">
+        <p className="h-fit pb-2 md:pb-0 text-black text-center md:text-left">
           {text}{" "}
           <Link
             to="/privacy-policy"
@@ -54,14 +54,19 @@ function CookieBanner({
           <Button
             onClick={() => decline()}
             type="classic"
-            className="border-2 border-dark hover:bg-grey-200"
+            variant="outline"
+            color="gray-800"
+            hoverColor="gray-600"
+            className="text-gray-800"
           >
             {buttonDecline}
           </Button>
           <Button
             onClick={() => accept()}
             type="classic"
-            className="text-white bg-indigo-700 hover:bg-indigo-600 ml-4"
+            color="indigo-700"
+            hoverColor="indigo-600"
+            className="text-white ml-4"
           >
             {buttonAccept}
           </Button>

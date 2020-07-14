@@ -1,23 +1,45 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "gatsby";
 
-function MobileMenu(items) {
-  const sides = items.items.map((value, key) => {
-    return (
-      <li className="py-4 px-0" key={key}>
-        <a className="hover:opacity-50" href={value[1]}>
-          {value[0]}
-        </a>
-      </li>
-    );
-  });
+function MobileMenu({ items, className, langList }) {
+  const sides = items.map((value) => (
+    <li className="p-4" key={value.title}>
+      <Link
+        className="hover:opacity-50"
+        onClick={() => handleOnClick()}
+        to={value.route}
+      >
+        {value.title}
+      </Link>
+    </li>
+  ));
+
+  function handleOnClick() {
+    document
+      .getElementsByTagName("body")[0]
+      .classList.remove("mobile-menu-active");
+  }
 
   return (
     <div
       id="menuScreen"
-      className="flex md:hidden justify-center text-center w-full h-full absolute bg-white text-3xl font-thin"
+      className={`flex justify-center items-start flex-col sm:hidden w-full bg-white text-5xl font-bold text-left ${className}`}
     >
       <ul id="menu-items">{sides}</ul>
+      <ul className="flex">
+        {langList.map((i) => (
+          <li className="p-4" key={i.title}>
+            <Link
+              className="hover:opacity-50"
+              onClick={() => handleOnClick()}
+              to={i.route}
+            >
+              {i.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
       <style jsx global>{`
         #menu-items a {
           color: #1e1e23;

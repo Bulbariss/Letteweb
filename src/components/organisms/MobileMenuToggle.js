@@ -10,13 +10,13 @@ function MobileMenuToggle({ children }) {
     <>
       <div
         id="menuToggle"
-        className="w-auto ml-auto py-0 px-4 flex md:hidden flex items-center"
+        className="w-auto ml-auto py-0 flex sm:hidden items-center z-20"
       >
         <button
           onClick={toggleNav}
           aria-label="Toggle navigation"
           type="button"
-          className="cursor-pointer relative block md:hidden w-10 h-10"
+          className="cursor-pointer relative block sm:hidden w-10 h-10"
         />
       </div>
       {children}

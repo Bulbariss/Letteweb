@@ -15,43 +15,62 @@ import Testimony from "../components/Testimony";
 import { useInView } from "react-intersection-observer";
 
 function IndexPage() {
-  const { t } = useTranslation("index");
+  const { t } = useTranslation(["index", "contactForm"]);
+
+  const buttonText = {
+    defaultText: t("contactForm:defaultText"),
+    errorText: t("contactForm:errorText"),
+    successText: t("contactForm:successText"),
+    loadingtext: t("contactForm:loadingtext"),
+  };
+
+  const formText = {
+    nameLabel: t("contactForm:nameLabel"),
+    emailLabel: t("contactForm:emailLabel"),
+    messageLabel: t("contactForm:messageLabel"),
+    namePlaceholder: t("contactForm:nameLabel"),
+    emailPlaceholder: t("contactForm:emailLabel"),
+    messagePlaceholder: t("contactForm:messageLabel"),
+  };
 
   const personnel = [
     {
       src: personPhoto,
-      name: t("nameOne"),
-      occupation: t("occupation‎One"),
+      name: t("index:nameOne"),
+      occupation: t("index:occupation‎One"),
       className: "FadeUp",
     },
     {
       src: personPhoto,
-      name: t("nameTwo"),
-      occupation: t("occupationTwo"),
+      name: t("index:nameTwo"),
+      occupation: t("index:occupationTwo"),
       className: "FadeUp anim-delay-05",
     },
     {
       src: personPhoto,
-      name: t("nameThree"),
-      occupation: t("occupationThree"),
+      name: t("index:nameThree"),
+      occupation: t("index:occupationThree"),
       className: "FadeUp anim-delay-06",
     },
     {
       src: personPhoto,
-      name: t("nameFour"),
-      occupation: t("occupationFour"),
+      name: t("index:nameFour"),
+      occupation: t("index:occupationFour"),
       className: "FadeUp anim-delay-07",
     },
   ];
 
   const [ref, inView] = useInView({
     triggerOnce: true,
+    rootMargin: "40px",
   });
   const [ref2, inView2] = useInView({
     triggerOnce: true,
+    rootMargin: "40px",
   });
   const [ref3, inView3] = useInView({
     triggerOnce: true,
+    rootMargin: "40px",
   });
 
   const { image } = useStaticQuery(graphql`
@@ -77,10 +96,10 @@ function IndexPage() {
       >
         <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center ">
           <h1 className="font-bold text-4xl mt-0 sm:mt-12 md:text-6xl  max-w-4xl leading-none mx-auto whitespace-pre-line">
-            {t("heading")}
+            {t("index:heading")}
           </h1>
           <p className="text-lg md:text-xl lg:text-xl pb-4 leading-snug  text-muted-black max-w-sm lg:max-w-xl mx-auto mt-4">
-            {t("secondHeading")}
+            {t("index:secondHeading")}
           </p>
           <div className="inline-flex flex-col md:flex-row">
             <Button
@@ -90,7 +109,7 @@ function IndexPage() {
               hoverColor="indigo-600"
               size="lg"
             >
-              {t("primaryButton")}
+              {t("index:primaryButton")}
             </Button>
             <Button
               variant="outline"
@@ -98,11 +117,11 @@ function IndexPage() {
               textColor="black"
               hoverColor="gray-700"
               hoverTextColor="gray-700"
-              href="/about"
+              href="/studio"
               className="md:ml-4 mt-2 md:mt-0 text-lg"
               size="lg"
             >
-              {t("secondaryButton")}
+              {t("index:secondaryButton")}
             </Button>
           </div>
         </div>
@@ -135,32 +154,23 @@ function IndexPage() {
                   } animated FadeRight`}
                 >
                   <h2 className="text-2xl sm:text-lx lg:text-2xl font-bold text-coolGray-900 leading-snug pb-2">
-                    {t("testimonyHeading")}
+                    {t("index:testimonyHeading")}
                   </h2>
                   <p className="text-coolGray-700 leading-relaxed">
-                    {t("testimonyText")}
+                    {t("index:testimonyText")}
                   </p>
                 </div>
-
-                {/* <Button
-                  href="/studio"
-                  className="mt-4"
-                  color="indigo-700"
-                  hoverColor="indigo-600"
-                >
-                  See more
-                </Button> */}
               </div>
             </div>
             <div className="flex items-center sm:justify-between flex-col sm:flex-row pt-8 text-coolGray-700 leading-relaxed">
               <Testimony className="FadeUp sm:anim-delay-04 before-01">
-                {t("testimonyOne")}
+                {t("index:testimonyOne")}
               </Testimony>
               <Testimony className="FadeUp sm:anim-delay-05 before-02">
-                {t("testimonyTwo")}
+                {t("index:testimonyTwo")}
               </Testimony>
               <Testimony className="FadeUp sm:anim-delay-06 before-03">
-                {t("testimonyThree")}
+                {t("index:testimonyThree")}
               </Testimony>
             </div>
           </div>
@@ -173,7 +183,7 @@ function IndexPage() {
       >
         <div className=" max-w-80 mx-auto flex flex-col justify-center py-16 md:py-24">
           <h3 className="text-4xl font-bold  pb-12 underline text-center text-indigo-100">
-            {t("teamHeading")}
+            {t("index:teamHeading")}
           </h3>
           <div className="self-center text-left max-w-5xl overflow-hidden flex flex-wrap">
             {personnel.map((i, k) => (
@@ -195,10 +205,10 @@ function IndexPage() {
       >
         <div className=" max-w-80 mx-auto flex flex-col text-center px-6 sm:px-10 lg:px-16 h-56">
           <h4 className="text-4xl font-bold py-8 underline text-coolGray-900">
-            {t("projectsHeading")}
+            {t("index:projectsHeading")}
           </h4>
           <h5 className="text-3xl flex self-center font-bold m-auto w-fit text-coolGray-900">
-            {t("projectsText")}
+            {t("index:projectsText")}
           </h5>
         </div>
       </section>
@@ -214,9 +224,9 @@ function IndexPage() {
           >
             <div className="max-w-lg mx-auto p-4 sm:p-6 shadow-lg sm:shadow-2xl rounded-lg bg-white z-10  text-coolGray-800 border-coolGray-200">
               <h6 className="text-4xl font-bold h-fit pb-6 underline max-w-lg mx-auto text-coolGray-900">
-                {t("contactUsHeading")}
+                {t("index:contactUsHeading")}
               </h6>
-              <ContactForm />
+              <ContactForm formText={formText} buttonText={buttonText} />
             </div>
           </div>
         </div>

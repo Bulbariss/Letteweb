@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 const PersonCard = ({ name, occupation, src, className, ...props }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
+    rootMargin: "40px",
   });
 
   return (

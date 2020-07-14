@@ -1,9 +1,11 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
+import MobileMenuToggle from "./organisms/MobileMenuToggle";
+import MobileMenu from "./organisms/MobileMenu";
 
 function Header() {
   const [isLangListExpanded, toggleExpansion] = useState(false);
-  const [isMenuExpanded, menuExpansion] = useState(false);
+
   const links = [
     {
       route: `/projects`,
@@ -25,6 +27,10 @@ function Header() {
     },
     {
       route: `/ru`,
+      title: `EN`,
+    },
+    {
+      route: `/ru`,
       title: `RU`,
     },
   ];
@@ -32,13 +38,13 @@ function Header() {
   return (
     <>
       <header className="fixed w-full">
-        <div className="max-w-80 flex mx-auto h-full items-center px-6 sm:px-10 lg:px-16 relative">
+        <div className="max-w-80 flex mx-auto h-full items-center px-6 sm:px-10 lg:px-16">
           <div className="logo mr-auto w-auto h-auto">
             <Link className="text-2xl let-space-3 font-black" to="/">
               LETTEWEB
             </Link>
           </div>
-          <nav className="ml-auto w-auto h-auto text-sm  hidden sm:flex">
+          <nav className="ml-auto w-auto h-auto text-sm hidden sm:flex">
             {links.map((link) => (
               <Link
                 className="link-animation noSelect px-4 py-3"
@@ -88,58 +94,15 @@ function Header() {
               ))}
             </div>
           </nav>
-
-          <div
-            id="menuToggle"
-            className={`${isMenuExpanded ? `active` : ""} block sm:hidden`}
-          >
-            <label htmlFor="checkbox" className="label">
-              <input
-                type="checkbox"
-                id="checkbox"
-                className="checkbox"
-                onClick={() => menuExpansion(!isMenuExpanded)}
-                onKeyPress={() => menuExpansion(!isMenuExpanded)}
-              />
-            </label>
-          </div>
+          <MobileMenuToggle>
+            <MobileMenu
+              className="absolute left-0 top-0 h-screen"
+              items={links}
+              langList={langList}
+            />
+          </MobileMenuToggle>
         </div>
       </header>
-
-      <nav id="menu" className={`${isMenuExpanded ? `active` : ` `} sm:hidden`}>
-        <div id="menu-items" className="font-bold">
-          <ul>
-            {links.map((link) => (
-              <li className="nav-list-item" key={link.title}>
-                <Link className="link-animation noSelect" to={link.route}>
-                  <span data-letters={link.title}>{link.title}</span>
-                </Link>
-              </li>
-            ))}
-
-            <div className="flex items-center nav-list-item">
-              <div className="link-animation noSelect">
-                <span data-letters="EN">EN</span>
-              </div>
-
-              {langList.map((link) => (
-                <Link
-                  className="link-animation noSelect"
-                  key={link.title}
-                  to={link.route}
-                >
-                  <span
-                    data-letters={link.title}
-                    className="text-coolGray-400 text-4xl"
-                  >
-                    {link.title}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </ul>
-        </div>
-      </nav>
     </>
   );
 }

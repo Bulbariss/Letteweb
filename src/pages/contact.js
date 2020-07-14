@@ -5,8 +5,27 @@ import SEO from "../components/seo";
 import ContactForm from "../components/organisms/ContactForm";
 import { Link } from "gatsby";
 import Particles from "react-particles-js";
+import { useTranslation } from "react-i18next";
 
 function ContactPage() {
+  const { t } = useTranslation(["contact", "contactForm"]);
+
+  const buttonText = {
+    defaultText: t("contactForm:defaultText"),
+    errorText: t("contactForm:errorText"),
+    successText: t("contactForm:successText"),
+    loadingtext: t("contactForm:loadingtext"),
+  };
+
+  const formText = {
+    nameLabel: t("contactForm:nameLabel"),
+    emailLabel: t("contactForm:emailLabel"),
+    messageLabel: t("contactForm:messageLabel"),
+    namePlaceholder: t("contactForm:nameLabel"),
+    emailPlaceholder: t("contactForm:emailLabel"),
+    messagePlaceholder: t("contactForm:messageLabel"),
+  };
+
   return (
     <Layout>
       <SEO keywords={[`letteweb`]} title="Contact" />
@@ -19,7 +38,7 @@ function ContactPage() {
           <div className="flex flex-col max-w-4xl md:flex-row bg-white rounded-lg w-fit shadow-2xl">
             <div className="pb-0 p-4 sm:px-6 sm:pt-6 md:pb-6 relative w-full">
               <h1 className="text-3xl md:text-4xl text-coolGray-900 leading-snug font-bold">
-                We&apos;ll be glad to hear from you.
+                {t("contact:heading")}
               </h1>
               <div className="absolute bottom-0 pb-4 sm:pb-6 hidden md:block">
                 <p className="font-bold mb-2 text-lg">Email</p>
@@ -29,7 +48,10 @@ function ContactPage() {
                 >
                   work@letteweb.lv
                 </a>
-                <p className="font-bold mb-2 text-lg">Socials</p>
+                <p className="font-bold mb-2 text-lg">
+                  {" "}
+                  {t("contact:socials")}
+                </p>
                 <Link to="/" className="block w-fit hover-opacity mb-1">
                   Facebook
                 </Link>
@@ -39,7 +61,7 @@ function ContactPage() {
               </div>
             </div>
             <div id="form-container" className="p-4 sm:p-6 w-full">
-              <ContactForm />
+              <ContactForm formText={formText} buttonText={buttonText} />
             </div>
           </div>
         </div>

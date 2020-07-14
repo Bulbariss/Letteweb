@@ -24,9 +24,9 @@ function ContactForm({
     loadingtext: "",
   },
   formText = {
-    nameLabel: "your name",
-    emailLabel: "your email",
-    messageLabel: "your message",
+    nameLabel: "Your Name",
+    emailLabel: "Your Email",
+    messageLabel: "Your Message",
     namePlaceholder: "Your Name",
     emailPlaceholder: "Your Email",
     messagePlaceholder: "Your Message",
