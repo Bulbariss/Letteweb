@@ -20,7 +20,7 @@ function MobileMenu({ items, className, langList, activeLang }) {
       id="menuScreen"
       className={`flex justify-center items-start flex-col sm:hidden w-full bg-white text-5xl font-bold text-left ${className}`}
     >
-      <ul id="menu-items" className="flex flex-col items-start">
+      <ul id="menu-items" className="flex flex-col items-start -mt-12">
         {items.map((link) => (
           <HeaderLinks
             onClick={() => handleOnClick()}

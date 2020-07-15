@@ -16,6 +16,16 @@ const Input = ({ className, ...props }, ref) => {
           appearance: none;
           transition: border-color 0.2s;
         }
+
+        input::-webkit-input-placeholder {
+          line-height: normal !important;
+        }
+        input::placeholder {
+          line-height: normal !important;
+        }
+        input::-moz-placeholder {
+          line-height: normal !important;
+        }
       `}</style>
     </>
   );

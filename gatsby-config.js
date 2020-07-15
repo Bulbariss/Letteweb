@@ -22,7 +22,7 @@ module.exports = {
         theme_color: `#4dc0b5`,
         display: `minimal-ui`,
         icon: `./src/images/icon.png`,
-        purpose: "maskable",
+        purpose: "any maskable",
       },
     },
     {

@@ -69,14 +69,14 @@ function Studio() {
         fadeIn="soft"
         id="studio-hero"
       >
-        <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16 sm:text-center">
+        <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16 sm:text-center -mt-12 sm:mt-0">
           <MoovingLetters
             className="font-bold text-5xl md:text-6xl leading-none"
-            text="Our Priciple"
+            text={t("pageHeading")}
           />
           <MoovingLetters
             className="text-base text-gray-500 mt-3 sm:mt-5 sm:text-lg sm:max-w-2xl sm:mx-auto md:mt-5 md:text-xl mx-auto"
-            text={t("pageHeading")}
+            text={t("pageHeadingText")}
           />
         </div>
       </BackgroundImage>

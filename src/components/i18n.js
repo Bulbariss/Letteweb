@@ -23,6 +23,14 @@ import contactFormEn from "../locales/en/contactForm.json";
 import contactFormLv from "../locales/lv/contactForm.json";
 import contactFormRu from "../locales/ru/contactForm.json";
 
+import privacyAnd404En from "../locales/en/privacyAnd404.json";
+import privacyAnd404Lv from "../locales/lv/privacyAnd404.json";
+import privacyAnd404Ru from "../locales/ru/privacyAnd404.json";
+
+import projectsEn from "../locales/en/projects.json";
+import projectsLv from "../locales/lv/projects.json";
+import projectsRu from "../locales/ru/projects.json";
+
 const resources = {
   en: {
     index: indexEn,
@@ -30,6 +38,8 @@ const resources = {
     contact: contactEn,
     footerAndCookies: footerAndCookiesEn,
     contactForm: contactFormEn,
+    privacyAnd404: privacyAnd404En,
+    projects: projectsEn,
   },
   lv: {
     index: indexLv,
@@ -37,6 +47,8 @@ const resources = {
     contact: contactLv,
     footerAndCookies: footerAndCookiesLv,
     contactForm: contactFormLv,
+    privacyAnd404: privacyAnd404Lv,
+    projects: projectsLv,
   },
   ru: {
     index: indexRu,
@@ -44,6 +56,8 @@ const resources = {
     contact: contactRu,
     footerAndCookies: footerAndCookiesRu,
     contactForm: contactFormRu,
+    privacyAnd404: privacyAnd404Ru,
+    projects: projectsRu,
   },
 };
 
@@ -54,10 +68,12 @@ i18n
   .init({
     resources,
     fallbackLng: "en",
+    load: "languageOnly",
+    supportedLngs: ["en", "lv", "ru"],
     debug: false,
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
+    // interpolation: {
+    //   escapeValue: false, // not needed for react as it escapes by default
+    // },
     react: {
       useSuspense: false,
     },

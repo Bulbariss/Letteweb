@@ -11,7 +11,7 @@ const Spinner = ({ color, size, loadingText, ...props }, ref) => {
       <div
         className={`spin-container inline-block ${
           !loadingText ? "relative" : "absolute"
-        } border-2 rounded-full mr-2 border-${color} ${SIZES[size]}`}
+        } border-2 rounded-full mr-2 ${color} ${SIZES[size]}`}
         ref={ref}
         {...props}
       >

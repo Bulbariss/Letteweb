@@ -9,13 +9,15 @@ function ContactForm({
   className,
   style = "classic",
   colors = {
-    themeColor: "indigo-600",
-    errorColor: "red-500",
-    successColor: "green-500",
-    loadingColor: "blue-500",
-    btnHover: "indigo-700",
-    inputColor: "white",
-    inputBorderColor: "gray-300",
+    themeBgColor: "bg-indigo-600",
+    errorBgColor: "bg-red-500",
+    errorBorderColor: "border-red-500",
+    successBgColor: "bg-green-500",
+    loadingColor: "bg-blue-500",
+    btnHover: "bg-indigo-700",
+    inputColor: "bg-white",
+    inputFocusColor: "focus:border-indigo-600",
+    inputBorderColor: "border-gray-300",
   },
   buttonText = {
     defaultText: "Send",
@@ -45,7 +47,7 @@ function ContactForm({
   const [sendingStatus, setSendingStatus] = useState("notSending");
 
   const INPUTSTYLES = {
-    classic: `border-2 bg-${colors.inputColor} border-${colors.inputBorderColor} focus:border-${colors.themeColor} rounded-md w-full mb-4`,
+    classic: `border-2 ${colors.inputColor} ${colors.inputBorderColor} ${colors.themeColor} rounded-md w-full mb-4`,
   };
 
   function validateName() {
@@ -135,7 +137,7 @@ function ContactForm({
     },
     error: {
       state: {
-        color: colors.errorColor,
+        color: colors.errorBorderColor,
       },
       buttonText: buttonText.errorText,
     },
@@ -151,10 +153,11 @@ function ContactForm({
     <form className={className} {...props}>
       <Label label={formText.nameLabel} htmlFor="input-name" />
       <Input
+        id="input-name"
         name="Name"
         type="text"
         placeholder={formText.namePlaceholder}
-        className={`${isNameValid === false && `border-${colors.errorColor}`} ${
+        className={`${isNameValid === false && `${colors.errorBorderColor}`} ${
           INPUTSTYLES[style]
         } ${inputHeight}`}
         value={name}
@@ -168,9 +171,9 @@ function ContactForm({
         name="Email"
         type="text"
         placeholder={formText.emailPlaceholder}
-        className={`${
-          isEmailValid === false && `border-${colors.errorColor}`
-        } ${INPUTSTYLES[style]} ${inputHeight}`}
+        className={`${isEmailValid === false && `${colors.errorBorderColor}`} ${
+          INPUTSTYLES[style]
+        } ${inputHeight}`}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         onBlur={() => validateEmail()}
@@ -180,7 +183,7 @@ function ContactForm({
       <Textarea
         id="input-message"
         className={`${
-          isMessageValid === false && `border-${colors.errorColor}`
+          isMessageValid === false && `${colors.errorBorderColor}`
         } ${INPUTSTYLES[style]} ${textareaHeight}`}
         name="Message"
         placeholder={formText.messagePlaceholder}
@@ -190,7 +193,7 @@ function ContactForm({
       />
 
       <Button
-        textColor="white"
+        textColor="text-white"
         size="lg"
         onClick={(event) => {
           event.stopPropagation();

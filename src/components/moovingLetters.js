@@ -62,6 +62,7 @@ function MoovingLetters({ text, className, delay = 1500, triggerOnce = true }) {
   useEffect(() => {
     textWrapper.current.innerHTML = splitText(text);
     getGlitchesMatrix();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -73,6 +74,7 @@ function MoovingLetters({ text, className, delay = 1500, triggerOnce = true }) {
     }
 
     return () => cancelAnimationFrame(requestRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
   return (

@@ -13,31 +13,25 @@ const Textarea = ({ className, placeholder, ...props }, ref) => {
         {...props}
       ></textarea>
       <style jsx>{`
-         {
-          /* textarea::placeholder {
-          color: #52606d;
-          line-height: 1.5;
-        }
-
-        textarea:-ms-input-placeholder {
-          color: #52606d;
-          line-height: 1.5;
-        }
-
-        textarea::-webkit-input-placeholder {
-          color: #52606d;
-          line-height: 1.5;
-        } */
-        }
-
         textarea {
           vertical-align: middle;
+          line-height: normal;
           padding: 6px 10px;
           box-shadow: none;
           box-sizing: border-box;
           appearance: none;
           min-height: 100px;
           transition: border-color 0.2s;
+        }
+
+        textarea::placeholder {
+          line-height: normal !important;
+        }
+        textarea::-moz-placeholder {
+          line-height: normal !important;
+        }
+        textarea::-webkit-input-placeholder {
+          line-height: normal !important;
         }
 
         textarea:focus {

@@ -41,7 +41,7 @@ function Header() {
   ];
 
   const langs = langList.filter(
-    (word) => word.title !== i18n.language.toUpperCase()
+    (word) => word.title !== i18n.languages[0].toUpperCase()
   );
 
   const changeLanguage = (code) => {
@@ -65,7 +65,7 @@ function Header() {
               className="w-52px"
               onClick={() => toggleExpansion(!isLangListExpanded)}
               button
-              link={{ title: `${i18n.language.toUpperCase()}` }}
+              link={{ title: `${i18n.languages[0].toUpperCase()}` }}
             />
             {isLangListExpanded && (
               <div
@@ -93,7 +93,7 @@ function Header() {
               className="absolute left-0 top-0 h-screen"
               items={links}
               langList={langList}
-              activeLang={i18n.language.toUpperCase()}
+              activeLang={i18n.languages[0].toUpperCase()}
             />
           </MobileMenuToggle>
         </div>

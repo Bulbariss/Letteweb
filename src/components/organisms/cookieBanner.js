@@ -55,8 +55,9 @@ function CookieBanner({
             onClick={() => decline()}
             type="classic"
             variant="outline"
-            color="gray-800"
-            hoverColor="gray-600"
+            color="border-gray-800"
+            hoverColor="hover:border-gray-600"
+            hoverTextColor="hover:text-gray-600"
             className="text-gray-800"
           >
             {buttonDecline}
@@ -64,8 +65,8 @@ function CookieBanner({
           <Button
             onClick={() => accept()}
             type="classic"
-            color="indigo-700"
-            hoverColor="indigo-600"
+            color="bg-indigo-700"
+            hoverColor="hover:bg-indigo-600"
             className="text-white ml-4"
           >
             {buttonAccept}

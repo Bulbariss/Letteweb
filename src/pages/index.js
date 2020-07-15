@@ -94,8 +94,8 @@ function IndexPage() {
         fluid={image.sharp.fluid}
         fadeIn="soft"
       >
-        <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center ">
-          <h1 className="H1 text-muted-black mt-0 sm:mt-12 max-w-4xl mx-auto whitespace-pre-line">
+        <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center -mt-12 sm:mt-0 overflow-hidden">
+          <h1 className="H1 text-muted-black mt-0 sm:mt-12 max-w-4xl mx-auto sm:whitespace-pre-line break-words">
             {t("index:heading")}
           </h1>
           <p className="P text-gray-900">{t("index:secondHeading")}</p>
@@ -103,18 +103,18 @@ function IndexPage() {
             <Button
               href="/contact"
               className="text-lg"
-              color="indigo-700"
-              hoverColor="indigo-600"
+              color="bg-indigo-700"
+              hoverColor="hover:bg-indigo-600"
               size="lg"
             >
               {t("index:primaryButton")}
             </Button>
             <Button
               variant="outline"
-              color="black"
-              textColor="black"
-              hoverColor="gray-700"
-              hoverTextColor="gray-700"
+              color="border-black"
+              textColor="text-black"
+              hoverColor="hover:border-gray-700"
+              hoverTextColor="hover:text-gray-700"
               href="/studio"
               className="sm:ml-4 mt-2 sm:mt-0 text-lg"
               size="lg"

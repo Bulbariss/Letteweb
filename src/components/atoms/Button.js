@@ -21,7 +21,7 @@ const Button = forwardRef(
       type = "classic",
       color,
       hoverColor = color,
-      textColor = "white",
+      textColor = "text-white",
       hoverTextColor,
       variant = "solid",
       size = "md",
@@ -38,15 +38,15 @@ const Button = forwardRef(
     const STYLES = {
       pill: `w-24 h-8 rounded-lg`,
       classic: `classic whitespace-no-wrap`,
-      link: `text-${textColor} hover:underline`,
+      link: `${textColor} hover:underline`,
     };
 
     const VARIANTS = {
-      solid: `bg-${color} text-${textColor} hover:bg-${hoverColor}`,
-      outline: `border-2 border-${color} text-${textColor} hover:border-${hoverColor} hover:text-${
+      solid: `${color} ${textColor} ${hoverColor}`,
+      outline: `border-2 ${color} ${textColor} ${hoverColor} ${
         hoverTextColor || hoverColor
       }`,
-      ghost: `text-${textColor} bg-transparent hover:bg-${hoverColor}`,
+      ghost: `${textColor} bg-transparent ${hoverColor}`,
     };
 
     const SIZES = {
@@ -132,5 +132,4 @@ Button.propTypes = {
 
 Button.displayName = "Button";
 
-// export default forwardRef(Button);
 export default Button;
