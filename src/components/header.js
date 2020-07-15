@@ -2,38 +2,51 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 import MobileMenuToggle from "./organisms/MobileMenuToggle";
 import MobileMenu from "./organisms/MobileMenu";
+import HeaderLinks from "./atoms/HeaderLinks";
+import { useTranslation } from "react-i18next";
 
 function Header() {
+  const { t, i18n } = useTranslation("footerAndCookies");
+
   const [isLangListExpanded, toggleExpansion] = useState(false);
 
   const links = [
     {
-      route: `/projects`,
-      title: `PROJECTS`,
+      route: `/${t("linkOne")}`,
+      title: t("linkOne").toUpperCase(),
     },
     {
-      route: `/studio`,
-      title: `STUDIO`,
+      route: `/${t("linkTwo")}`,
+      title: t("linkTwo").toUpperCase(),
     },
     {
-      route: `/contact`,
-      title: `CONTACT`,
+      route: `/${t("linkThree")}`,
+      title: t("linkThree").toUpperCase(),
     },
   ];
+
   const langList = [
     {
-      route: `/lv`,
-      title: `LV`,
+      route: `/${t("langOne")}`,
+      title: t("langOne").toUpperCase(),
     },
     {
-      route: `/ru`,
-      title: `EN`,
+      route: `/${t("langTwo")}`,
+      title: t("langTwo").toUpperCase(),
     },
     {
-      route: `/ru`,
-      title: `RU`,
+      route: `/${t("langThree")}`,
+      title: t("langThree").toUpperCase(),
     },
   ];
+
+  const langs = langList.filter(
+    (word) => word.title !== i18n.language.toUpperCase()
+  );
+
+  const changeLanguage = (code) => {
+    i18n.changeLanguage(code);
+  };
 
   return (
     <>
@@ -46,63 +59,84 @@ function Header() {
           </div>
           <nav className="ml-auto w-auto h-auto text-sm hidden sm:flex">
             {links.map((link) => (
-              <Link
-                className="link-animation noSelect px-4 py-3"
-                key={link.title}
-                to={link.route}
-              >
-                <span
-                  data-letters={link.title}
-                  className="leading-tight font-bold"
-                >
-                  {link.title}
-                </span>
-              </Link>
+              <HeaderLinks link={link} key={link.route} />
             ))}
-
-            <div
+            <HeaderLinks
+              className="w-52px"
               onClick={() => toggleExpansion(!isLangListExpanded)}
-              onKeyPress={() => toggleExpansion(!isLangListExpanded)}
-              className="link-animation noSelect px-4 py-3 w-52px"
-              role="button"
-              tabIndex="0"
-            >
-              <span className="leading-tight font-bold" data-letters="EN">
-                EN
-              </span>
-            </div>
-            <div
-              className={`${
-                isLangListExpanded ? `block` : `hidden`
-              }  absolute right-0 mx-6
+              button
+              link={{ title: `${i18n.language.toUpperCase()}` }}
+            />
+            {isLangListExpanded && (
+              <div
+                className={`absolute flex flex-col items-end w-full max-w-80 right-0 mx-6
               sm:mx-10 lg:mx-16 text-sm`}
-              id="lang-list"
-            >
-              {langList.map((link) => (
-                <Link
-                  key={link.title}
-                  to={link.route}
-                  className="link-animation noSelect px-4 py-3 w-full"
-                >
-                  <span
-                    className="leading-tight font-bold"
-                    data-letters={link.title}
-                  >
-                    {link.title}
-                  </span>
-                </Link>
-              ))}
-            </div>
+                id="lang-list"
+              >
+                {langs.map((link) => (
+                  <HeaderLinks
+                    className="w-52px"
+                    onClick={() => (
+                      changeLanguage(link.title.toLowerCase()),
+                      toggleExpansion(!isLangListExpanded)
+                    )}
+                    button
+                    link={link}
+                    key={link.route}
+                  />
+                ))}
+              </div>
+            )}
           </nav>
           <MobileMenuToggle>
             <MobileMenu
               className="absolute left-0 top-0 h-screen"
               items={links}
               langList={langList}
+              activeLang={i18n.language.toUpperCase()}
             />
           </MobileMenuToggle>
         </div>
       </header>
+      <style jsx>
+        {`
+  header {
+    height: 80px;
+    z-index: 1000;
+  }
+
+  #lang-toggle {
+    padding: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    min-width: fit-content;
+    top: 50px !important;
+  }
+
+  #lang-toggle span {
+    padding-top: 13px;
+    width: fit-content;
+    margin: auto;
+  }
+
+
+  #lang-toggle {
+    color: #000;
+    font-size: 14px;
+    width: 48.5px;
+  }
+
+  #lang-toggle a {
+    height: 40px;
+  }
+
+  #lang-list {
+    line-height: 0;
+    top: 61px;
+    width: 52px;
+  `}
+      </style>
     </>
   );
 }

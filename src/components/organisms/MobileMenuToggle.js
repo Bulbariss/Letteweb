@@ -1,6 +1,8 @@
 import React from "react";
 
 function MobileMenuToggle({ children }) {
+  
+
   function toggleNav() {
     document
       .getElementsByTagName("body")[0]

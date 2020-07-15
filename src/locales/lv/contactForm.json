@@ -1,0 +1,12 @@
+{
+  "defaultText": "Send",
+  "errorText": "Error",
+  "successText": "Message sent",
+  "loadingtext": "",
+  "nameLabel": "Your Name",
+  "emailLabel": "Your Email",
+  "messageLabel": "Your Message",
+  "namePlaceholder": "Your Name",
+  "emailPlaceholder": "Your Email",
+  "messagePlaceholder": "Your Message"
+}

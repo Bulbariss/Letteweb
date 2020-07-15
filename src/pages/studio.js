@@ -69,7 +69,7 @@ function Studio() {
         fadeIn="soft"
         id="studio-hero"
       >
-        <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16 text-center">
+        <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16 sm:text-center">
           <MoovingLetters
             className="font-bold text-5xl md:text-6xl leading-none"
             text="Our Priciple"
@@ -108,12 +108,21 @@ function Studio() {
             </Link>
             <Link to="/contact" className="ml-4 ">
               <svg
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
-                id="arrow-studio-page"
-                viewBox="0 0 512 512"
-                fill="#5966D9"
+                className="w-10"
               >
-                <path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z" />
+                <g fill="none" fillRule="evenodd">
+                  <circle fill="#5966D9" cx="12" cy="12" r="12" />
+                  <path
+                    d="M9 5l7 7-7 7"
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ transform: "translate(10%, 10%) scale(0.8, 0.8)" }}
+                    strokeWidth="3"
+                  />
+                </g>
               </svg>
             </Link>
           </div>

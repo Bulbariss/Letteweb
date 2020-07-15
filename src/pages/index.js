@@ -95,13 +95,11 @@ function IndexPage() {
         fadeIn="soft"
       >
         <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center ">
-          <h1 className="font-bold text-4xl mt-0 sm:mt-12 md:text-6xl  max-w-4xl leading-none mx-auto whitespace-pre-line">
+          <h1 className="H1 text-muted-black mt-0 sm:mt-12 max-w-4xl mx-auto whitespace-pre-line">
             {t("index:heading")}
           </h1>
-          <p className="text-lg md:text-xl lg:text-xl pb-4 leading-snug  text-muted-black max-w-sm lg:max-w-xl mx-auto mt-4">
-            {t("index:secondHeading")}
-          </p>
-          <div className="inline-flex flex-col md:flex-row">
+          <p className="P text-gray-900">{t("index:secondHeading")}</p>
+          <div className="inline-flex flex-col sm:flex-row w-full sm:w-auto mt-3 sm:mt-4 md:mt-5">
             <Button
               href="/contact"
               className="text-lg"
@@ -118,7 +116,7 @@ function IndexPage() {
               hoverColor="gray-700"
               hoverTextColor="gray-700"
               href="/studio"
-              className="md:ml-4 mt-2 md:mt-0 text-lg"
+              className="sm:ml-4 mt-2 sm:mt-0 text-lg"
               size="lg"
             >
               {t("index:secondaryButton")}
