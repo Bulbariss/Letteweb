@@ -20,7 +20,7 @@ function MobileMenu({ items, className, langList, activeLang }) {
       id="menuScreen"
       className={`flex justify-center items-start flex-col sm:hidden w-full bg-white text-5xl font-bold text-left ${className}`}
     >
-      <ul id="menu-items" className="flex flex-col items-start -mt-12">
+      <div id="menu-items" className="flex flex-col items-start -mt-12">
         {items.map((link) => (
           <HeaderLinks
             onClick={() => handleOnClick()}
@@ -28,8 +28,8 @@ function MobileMenu({ items, className, langList, activeLang }) {
             key={link.route}
           />
         ))}
-      </ul>
-      <ul className="flex" id="mobileLangs">
+      </div>
+      <div className="flex" id="mobileLangs">
         {langList.map((i) => (
           <HeaderLinks
             className={`${
@@ -45,7 +45,7 @@ function MobileMenu({ items, className, langList, activeLang }) {
             key={i.route}
           />
         ))}
-      </ul>
+      </div>
       <style jsx global>{`
         #menu-items a {
           color: #1e1e23;

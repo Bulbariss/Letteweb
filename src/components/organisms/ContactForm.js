@@ -38,6 +38,7 @@ function ContactForm({
   ...props
 }) {
   const emailRegex = /^\S+@\S+\.\S+$/i;
+  const wordRegex = /^\w+.*$/i;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -51,7 +52,7 @@ function ContactForm({
   };
 
   function validateName() {
-    name ? setIsNameValid(true) : setIsNameValid(false);
+    wordRegex.test(name) ? setIsNameValid(true) : setIsNameValid(false);
   }
 
   function validateEmail() {
@@ -59,7 +60,9 @@ function ContactForm({
   }
 
   function validateMessage() {
-    message !== "" ? setIsMessageValid(true) : setIsMessageValid(false);
+    wordRegex.test(message)
+      ? setIsMessageValid(true)
+      : setIsMessageValid(false);
   }
 
   function clearForm() {

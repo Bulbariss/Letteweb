@@ -3,7 +3,7 @@ module.exports = {
     title: `Letteweb`,
     description: `Web development studio`,
     author: `Letteweb`,
-    siteUrl: "https://letteweb.lv",
+    siteUrl: "https://plvs.ru",
   },
   plugins: [
     "gatsby-plugin-eslint",
@@ -19,7 +19,7 @@ module.exports = {
         lang: `en`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#4dc0b5`,
+        theme_color: `#5966d9`,
         display: `minimal-ui`,
         icon: `./src/images/icon.png`,
         purpose: "any maskable",

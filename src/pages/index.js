@@ -6,16 +6,36 @@ import Waves from "../components/waves";
 import ContactForm from "../components/organisms/ContactForm";
 import BackgroundImage from "gatsby-background-image";
 import mouseSvg from "../images/mouse.svg";
-import teamPhoto from "../images/team.jpg";
-import personPhoto from "../images/person2.jpg";
 import Button from "../components/atoms/Button";
 import PersonCard from "../components/atoms/PersonCard";
 import { useTranslation } from "react-i18next";
 import Testimony from "../components/Testimony";
 import { useInView } from "react-intersection-observer";
+import Img from "gatsby-image";
 
 function IndexPage() {
-  const { t } = useTranslation(["index", "contactForm"]);
+  const { t } = useTranslation(["index", "contactForm", "SEO"]);
+
+  const { bg, teamPhoto, personPhoto } = useStaticQuery(graphql`
+    fragment Image on File {
+      sharp: childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    query {
+      bg: file(relativePath: { eq: "bg-hero.jpg" }) {
+        ...Image
+      }
+      teamPhoto: file(relativePath: { eq: "team.jpg" }) {
+        ...Image
+      }
+      personPhoto: file(relativePath: { eq: "person2.jpg" }) {
+        ...Image
+      }
+    }
+  `);
 
   const buttonText = {
     defaultText: t("contactForm:defaultText"),
@@ -35,28 +55,16 @@ function IndexPage() {
 
   const personnel = [
     {
-      src: personPhoto,
+      src: personPhoto.sharp.fluid,
       name: t("index:nameOne"),
       occupation: t("index:occupation‎One"),
       className: "FadeUp",
     },
     {
-      src: personPhoto,
+      src: personPhoto.sharp.fluid,
       name: t("index:nameTwo"),
       occupation: t("index:occupationTwo"),
       className: "FadeUp anim-delay-05",
-    },
-    {
-      src: personPhoto,
-      name: t("index:nameThree"),
-      occupation: t("index:occupationThree"),
-      className: "FadeUp anim-delay-06",
-    },
-    {
-      src: personPhoto,
-      name: t("index:nameFour"),
-      occupation: t("index:occupationFour"),
-      className: "FadeUp anim-delay-07",
     },
   ];
 
@@ -73,25 +81,19 @@ function IndexPage() {
     rootMargin: "40px",
   });
 
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "bg-hero.jpg" }) {
-        sharp: childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <Layout>
-      <SEO keywords={[`letteweb`]} title="Home" />
+      <SEO
+        keywords={t("SEO:keywords").split(",")}
+        title={t("SEO:index.title")}
+        description={t("SEO:description")}
+        lang={t("SEO:lang")}
+        pathname=""
+      />
       <BackgroundImage
         className="min-h-screen flex"
         Tag="section"
-        fluid={image.sharp.fluid}
+        fluid={bg.sharp.fluid}
         fadeIn="soft"
       >
         <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center -mt-12 sm:mt-0 overflow-hidden">
@@ -137,11 +139,15 @@ function IndexPage() {
             <div className="flex flex-col sm:flex-row ">
               <div
                 ref={ref}
-                className={`sm:w-1/2 sm:order-last z-10 sm:h-1/2 self-center ${
+                className={`w-full sm:w-1/2 sm:order-last z-10 sm:h-1/2 self-center ${
                   inView ? "anim" : ""
                 } animated FadeLeft`}
               >
-                <img src={teamPhoto} className="rounded-lg" alt="Team" />
+                <Img
+                  fluid={teamPhoto.sharp.fluid}
+                  className="rounded-lg"
+                  alt="Team"
+                />
               </div>
 
               <div className="sm:pr-8  max-w-2xl sm:w-1/2 self-center z-10">
@@ -183,7 +189,7 @@ function IndexPage() {
           <h3 className="text-4xl font-bold  pb-12 underline text-center text-indigo-100">
             {t("index:teamHeading")}
           </h3>
-          <div className="self-center text-left max-w-5xl overflow-hidden flex flex-wrap">
+          <div className="self-center text-left max-w-2xl overflow-hidden flex flex-wrap justify-center w-full">
             {personnel.map((i, k) => (
               <PersonCard
                 src={i.src}

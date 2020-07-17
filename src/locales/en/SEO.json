@@ -1,0 +1,23 @@
+{
+  "description": "Web development studio",
+  "keywords": "test,test2",
+  "lang": "en",
+  "index": {
+    "title": "Home"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "studio": {
+    "title": "Studio"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "404": {
+    "title": "404: Not found"
+  },
+  "privacy": {
+    "title": "Privacy Policy"
+  }
+}

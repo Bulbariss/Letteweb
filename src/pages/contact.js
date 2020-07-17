@@ -8,7 +8,7 @@ import Particles from "react-particles-js";
 import { useTranslation } from "react-i18next";
 
 function ContactPage() {
-  const { t } = useTranslation(["contact", "contactForm"]);
+  const { t } = useTranslation(["contact", "contactForm", "SEO"]);
 
   const buttonText = {
     defaultText: t("contactForm:defaultText"),
@@ -28,7 +28,13 @@ function ContactPage() {
 
   return (
     <Layout>
-      <SEO keywords={[`letteweb`]} title="Contact" />
+      <SEO
+        title={t("SEO:contact.title")}
+        keywords={t("SEO:keywords").split(",")}
+        description={t("SEO:description")}
+        lang={t("SEO:lang")}
+        pathname="/contact"
+      />
 
       <section className="min-h-screen flex justify-center text-coolGray-800">
         <div

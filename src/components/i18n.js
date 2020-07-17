@@ -31,6 +31,10 @@ import projectsEn from "../locales/en/projects.json";
 import projectsLv from "../locales/lv/projects.json";
 import projectsRu from "../locales/ru/projects.json";
 
+import SEOEn from "../locales/en/SEO.json";
+import SEOLv from "../locales/lv/SEO.json";
+import SEORu from "../locales/ru/SEO.json";
+
 const resources = {
   en: {
     index: indexEn,
@@ -40,6 +44,7 @@ const resources = {
     contactForm: contactFormEn,
     privacyAnd404: privacyAnd404En,
     projects: projectsEn,
+    SEO: SEOEn,
   },
   lv: {
     index: indexLv,
@@ -49,6 +54,7 @@ const resources = {
     contactForm: contactFormLv,
     privacyAnd404: privacyAnd404Lv,
     projects: projectsLv,
+    SEO: SEOLv,
   },
   ru: {
     index: indexRu,
@@ -58,6 +64,7 @@ const resources = {
     contactForm: contactFormRu,
     privacyAnd404: privacyAnd404Ru,
     projects: projectsRu,
+    SEO: SEORu,
   },
 };
 
