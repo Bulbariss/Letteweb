@@ -1,12 +1,12 @@
 {
-    "defaultText": "Send", 
-    "errorText": "Error",
-    "successText": "Message sent",
-    "loadingtext": "",  
-     "nameLabel":  "Your Name",
-    "emailLabel":  "Your Email", 
-    "messageLabel": "Your Message",
-    "namePlaceholder":"Your Name",
-    "emailPlaceholder":"Your Email", 
-    "messagePlaceholder": "Your Message"
+  "defaultText": "Отправить",
+  "errorText": "Ошибка",
+  "successText": "Сообщение отправлено",
+  "loadingtext": "",
+  "nameLabel": "Ваше Имя",
+  "emailLabel": "Ваш Email",
+  "СообщениеLabel": "Ваше Сообщение",
+  "namePlaceholder": "Ваше Имя",
+  "emailPlaceholder": "Ваш Email",
+  "СообщениеPlaceholder": "Ваше Сообщение"
 }

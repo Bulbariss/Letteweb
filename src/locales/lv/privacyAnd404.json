@@ -1,4 +1,17 @@
 {
-  "404Heading": "Page not found",
-  "404BtnText": "Back to main page"
+  "404Heading": "Lapa netika atrasta",
+  "404BtnText": "Atpakaļ uz sākumu",
+  "privacyHeader": "Privātuma politika",
+  "headerOne": "Kas ir sīkdatnes",
+  "headerTwo": "Kā mēs izmantojam sīkdatnes",
+  "headerThree": "Analītika",
+  "headerFour": "Sazinies ar mums",
+  "textOne": "Šī vietne izmanto sīkdatnes. Sīkdatnes tiek lejupielādētas jūsu datorā, lai uzlabotu jūsu pieredzi. Šajā lapā ir aprakstīts, kādu informāciju tās iegūst, kā mēs to izmantojam un kāpēc mums dažreiz šīs sīkdatnes ir jāglabā. Mēs arī kopīgosim, kā jūs varat novērst šo sīkdatņu saglabāšanu, lai gan tas var pazemināt vai “pārtraukt” noteiktus vietnes funkcionalitātes elementus.",
+  "textTwo": "Ja izmantojat pakalpojumu un piekļūstat tam, tīmekļa pārlūkprogrammā var ievietot vairākas sīkdatnes. Sīkdatnes tiek izmantotas šādiem mērķiem:",
+  "textThree": "Mēs varam izmantot trešās puses pakalpojumu sniedzējus, lai pārraudzītu un analizētu mūsu pakalpojuma izmantošanu.",
+  "textFour": "Ja jums ir jautājumi par šo privātuma politiku, varat sazināties ar mums:",
+  "textTwoPointOne": "Sīkdatņu politikas/paziņojuma pieņemšanas sīkdatnes: šīs sīkdatnes identificē, vai lietotāji ir akceptējuši sīkdatņu izmantošanu tīmekļa vietnē.",
+  "textTwoPointTwo": "Izsekošanas un veiktspējas sīkdatnes. Šīs sīkdatnes tiek izmantoti, lai izsekotu informācijai par datplūsmu uz tīmekļa vietni un to, kā lietotāji izmanto tīmekļa vietni. Informācija, kas iegūta, izmantojot šīs sīkdatnes, var tieši vai netieši identificēt jūs kā individuālu apmeklētāju. Tas ir tāpēc, ka apkopotā informācija parasti ir saistīta ar pseidonīmu, kas saistīts ar ierīci, kuru izmantojat, lai piekļūtu tīmekļa vietnei. Šīs sīkdatnes var izmantot arī, lai testētu jaunas tīmekļa vietnes reklāmas, lapas, līdzekļus vai jaunu funkcionalitāti un redzētu, kā uz tām reaģē mūsu lietotāji.",
+  "textThreePointOne": "Google Analytics ir tīmekļa analīzes pakalpojums. Varat apmeklēt viņu konfidencialitātes politikas lapu",
+  "textThreeButton": "seit"
 }

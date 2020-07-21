@@ -5,7 +5,6 @@ import SEO from "../components/seo";
 import Waves from "../components/waves";
 import ContactForm from "../components/organisms/ContactForm";
 import BackgroundImage from "gatsby-background-image";
-import mouseSvg from "../images/mouse.svg";
 import Button from "../components/atoms/Button";
 import PersonCard from "../components/atoms/PersonCard";
 import { useTranslation } from "react-i18next";
@@ -94,7 +93,8 @@ function IndexPage() {
         className="min-h-screen flex"
         Tag="section"
         fluid={bg.sharp.fluid}
-        fadeIn="soft"
+        durationFadeIn={200}
+        loading="eager"
       >
         <div className="px-6 py-12 sm:px-10 lg:px-16 w-full mx-auto self-center max-w-80 w-fit text-left sm:text-center -mt-12 sm:mt-0 overflow-hidden">
           <h1 className="H1 text-muted-black mt-0 sm:mt-12 max-w-4xl mx-auto sm:whitespace-pre-line break-words">
@@ -125,12 +125,6 @@ function IndexPage() {
             </Button>
           </div>
         </div>
-        <img
-          src={mouseSvg}
-          className="absolute bottom-0 center-y z-10"
-          id="mouse-img"
-          alt="Scroll down"
-        />
       </BackgroundImage>
 
       <section id="what-we-do" className="bg-coolGray-050 flex">

@@ -93,37 +93,55 @@ textarea::-webkit-input-placeholder {
 
 /* Font Declaration */
 
-@font-face {
+/* @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url("../fonts/Inter-Black.woff2") format("woff2"),
-    url("../fonts/Inter-Black.woff") format("woff");
+  src: url("../fonts/3AC130_8_0.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/3AC130_8_0.woff2") format("woff2"),
+    url("../fonts/3AC130_8_0.woff") format("woff"),
+    url("../fonts/3AC130_8_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/3AC130_E_0.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/3AC130_E_0.woff2") format("woff2"),
+    url("../fonts/3AC130_E_0.woff") format("woff"),
+    url("../fonts/3AC130_E_0.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
-    url("../fonts/Inter-Bold.woff") format("woff");
+  src: url("../fonts/3AC130_12_0.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/3AC130_12_0.woff2") format("woff2"),
+    url("../fonts/3AC130_12_0.woff") format("woff"),
+    url("../fonts/3AC130_12_0.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
-    url("../fonts/Inter-Regular.woff") format("woff");
+  src: url("../fonts/3AC130_3_0.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/3AC130_3_0.woff2") format("woff2"),
+    url("../fonts/3AC130_3_0.woff") format("woff"),
+    url("../fonts/3AC130_3_0.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("../fonts/Inter-Light.woff2") format("woff2"),
-    url("../fonts/Inter-Light.woff") format("woff");
+  src: url("../fonts/3AC130_6_0.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/3AC130_6_0.woff2") format("woff2"),
+    url("../fonts/3AC130_6_0.woff") format("woff"),
+    url("../fonts/3AC130_6_0.ttf") format("truetype");
 }
 
 @font-face {
@@ -131,10 +149,108 @@ textarea::-webkit-input-placeholder {
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../fonts/Inter-Medium.woff2") format("woff2"),
-    url("../fonts/Inter-Medium.woff") format("woff");
+  src: url("../fonts/3AC130_2_0.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/3AC130_2_0.woff2") format("woff2"),
+    url("../fonts/3AC130_2_0.woff") format("woff"),
+    url("../fonts/3AC130_2_0.ttf") format("truetype");
+} */
+
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-ExtraLight/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-ExtraLight/font.woff") format("woff");
 }
 
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-Light/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-Light/font.woff") format("woff");
+}
+
+/* @font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-Regular/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-Regular/font.woff") format("woff");
+} */
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-Thin/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-Thin/font.woff") format("woff");
+}
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-Normal/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-Normal/font.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-Medium/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-Medium/font.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-DemiBold/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-DemiBold/font.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-Bold/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-Bold/font.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-ExtraBold/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-ExtraBold/font.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-Black/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-Black/font.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTNormsPro";
+  font-style: normal;
+  font-weight: 950;
+  font-display: swap;
+  src: url("../fonts/TTNormsPro-ExtraBlack/font.woff2") format("woff2"),
+    url("../fonts/TTNormsPro-ExtraBlack/font.woff") format("woff");
+}
 /* Font Declaration */
 
 /* Classes */

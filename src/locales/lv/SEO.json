@@ -1,23 +1,23 @@
 {
-  "description": "Web development studio",
-  "keywords": ["test", "test2"],
-  "lang": "en",
+  "description": "Tīmekļā vietņu izstrāde",
+  "keywords": "test,test2",
+  "lang": "lv",
   "index": {
     "title": "Home"
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projekti"
   },
   "studio": {
-    "title": "Studio"
+    "title": "Studija"
   },
   "contact": {
-    "title": "Contact"
+    "title": "Kontakti"
   },
   "404": {
-    "title": "404"
+    "title": "404: Not found"
   },
   "privacy": {
-    "title": "Privacy Policy"
+    "title": "Privātuma politika"
   }
 }

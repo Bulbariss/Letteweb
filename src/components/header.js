@@ -12,15 +12,15 @@ function Header() {
 
   const links = [
     {
-      route: `/${t("linkOne")}`,
+      route: `/projects`,
       title: t("linkOne").toUpperCase(),
     },
     {
-      route: `/${t("linkTwo")}`,
+      route: `/studio`,
       title: t("linkTwo").toUpperCase(),
     },
     {
-      route: `/${t("linkThree")}`,
+      route: `/contact`,
       title: t("linkThree").toUpperCase(),
     },
   ];

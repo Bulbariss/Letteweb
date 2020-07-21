@@ -72,8 +72,9 @@ function Studio() {
         className="min-h-screen flex"
         Tag="section"
         fluid={image.sharp.fluid}
-        fadeIn="soft"
         id="studio-hero"
+        durationFadeIn={200}
+        loading="eager"
       >
         <div className="self-center max-w-80 w-full px-6 sm:px-10 lg:px-16 sm:text-center -mt-12 sm:mt-0">
           <MoovingLetters

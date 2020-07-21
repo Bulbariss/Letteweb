@@ -15,7 +15,7 @@ function MoovingLetters({ text, className, delay = 1500, triggerOnce = true }) {
   });
 
   function splitText(str) {
-    return str.replace(/\w+[!"#$%&'()*+,\-./:;<=>?@[\\\]^_‘{|}~]?/g, splitting);
+    return str.replace(/\S+/g, splitting);
   }
 
   function splitting(match) {

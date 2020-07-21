@@ -1,12 +1,12 @@
 {
-  "defaultText": "Send",
-  "errorText": "Error",
-  "successText": "Message sent",
+  "defaultText": "Nosūtīt",
+  "errorText": "Kļū∂a",
+  "successText": "Ziņa nosūtīta",
   "loadingtext": "",
-  "nameLabel": "Your Name",
-  "emailLabel": "Your Email",
-  "messageLabel": "Your Message",
-  "namePlaceholder": "Your Name",
-  "emailPlaceholder": "Your Email",
-  "messagePlaceholder": "Your Message"
+  "nameLabel": "Jūsu Vārds",
+  "emailLabel": "Jūsu Ēpasts",
+  "messageLabel": "Jūsu Ziņa",
+  "namePlaceholder": "Jūsu Vārds",
+  "emailPlaceholder": "Jūsu Ēpasts",
+  "messagePlaceholder": "Jūsu Ziņa"
 }

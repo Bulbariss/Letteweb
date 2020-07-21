@@ -8,9 +8,11 @@ import "./i18n";
 
 function Layout({ children }) {
   useEffect(() => {
-    if (getCookie("consent") === "true") {
-      googleAnalytics();
-    }
+    setTimeout(() => {
+      if (getCookie("consent") === "true") {
+        googleAnalytics();
+      }
+    }, 1000);
   }, []);
   return (
     <>

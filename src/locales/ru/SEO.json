@@ -1,23 +1,23 @@
 {
-  "description": "Web development studio",
+  "description": "Студия веб-разработки.",
   "keywords": ["test", "test2"],
-  "lang": "en",
+  "lang": "ru",
   "index": {
-    "title": "Home"
+    "title": "Главная"
   },
   "projects": {
-    "title": "Projects"
+    "title": "Проекты"
   },
   "studio": {
-    "title": "Studio"
+    "title": "Студия"
   },
   "contact": {
-    "title": "Contact"
+    "title": "Контакты"
   },
   "404": {
     "title": "404"
   },
   "privacy": {
-    "title": "Privacy Policy"
+    "title": "Политика конфиденциальности"
   }
 }

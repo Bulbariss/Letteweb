@@ -1,17 +1,18 @@
 {
-    "linkOne": "projects",
-    "linkTwo": "studio",
-    "linkThree": "contact",
+    "linkOne": "Projekti",
+    "linkTwo": "Studija",
+    "linkThree": "Kontakti",
     "langOne": "lv",
     "langTwo": "en",
     "langThree": "ru",
-    "getInTouch": "Get in touch - Let's make it official.",
-    "contacts": "Contacts",
-    "followUs": "Follow us",
-    "privacy": "Privacy Policy",
-    "cookies": "Cookie preferences",
-    "bannerText":"This website uses cookies to ensure you get the best experience on our website.",
-    "policyLink":"Read privacy policy",
-    "buttonDecline":"Decline",
-    "buttonAccept":"Accept"
+    "getInTouch": "Sazinies ar mums!",
+    "contacts": "Kontakti",
+    "followUs": "Seko mums",
+    "privacy": "Privātuma politika",
+    "cookies": "Sīkdatņu uzstādījumi",
+    "bannerText":"Šī tīmekļā vietne izmanto sīkdatnes, lai nodrošinātu labāko pieredzi tās lietošanā.",
+    "policyLink":"Skatīt privātuma politiku",
+    "buttonDecline":"Nepiekrist",
+    "buttonAccept":"Piekrist"
 }
+

@@ -38,7 +38,7 @@ function ContactForm({
   ...props
 }) {
   const emailRegex = /^\S+@\S+\.\S+$/i;
-  const wordRegex = /^\w+.*$/i;
+  const wordRegex = /\S+/i;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -140,13 +140,13 @@ function ContactForm({
     },
     error: {
       state: {
-        color: colors.errorBorderColor,
+        color: colors.errorBgColor,
       },
       buttonText: buttonText.errorText,
     },
     sent: {
       state: {
-        color: colors.successColor,
+        color: colors.successBgColor,
       },
       buttonText: buttonText.successText,
     },

@@ -12,7 +12,7 @@ const PersonCard = ({ name, occupation, src, className, ...props }) => {
     <div
       {...props}
       ref={ref}
-      className={`w-full sm:w-1/2 p-4 z-10 ${
+      className={`w-10/12 sm:w-5/12 p-4 z-10 ${
         inView ? "anim" : ""
       } animated ${className}`}
     >

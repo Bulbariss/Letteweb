@@ -11,7 +11,7 @@ module.exports = {
           "600": "#757575",
           "700": "#616161",
           "800": "#424242",
-          "900": "#212121"
+          "900": "#212121",
         },
         indigo: {
           "100": "#F0F7FF",
@@ -23,7 +23,7 @@ module.exports = {
           "700": "#5966D9",
           "800": "#4C4EA4",
           "900": "#42417B",
-          "1000": "#3A3462"
+          "1000": "#3A3462",
         },
         coolGray: {
           "050": "#F5F7FA",
@@ -35,7 +35,7 @@ module.exports = {
           "600": "#52606D",
           "700": "#3E4C59",
           "800": "#323F4B",
-          "900": "#1F2933"
+          "900": "#1F2933",
         },
         red: {
           "050": "#FFF7F7",
@@ -47,15 +47,15 @@ module.exports = {
           "600": "#DA3939",
           "700": "#B41E1F",
           "800": "#9B1314",
-          "900": "#880F10"
-        }
+          "900": "#880F10",
+        },
       },
       screens: {
-        xxl: "1440px"
+        xxl: "1440px",
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "TTNormsPro",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
@@ -67,10 +67,10 @@ module.exports = {
           "Apple Color Emoji",
           "Segoe UI Emoji",
           "Segoe UI Symbol",
-          "Noto Color Emoji"
-        ]
-      }
-    }
+          "Noto Color Emoji",
+        ],
+      },
+    },
   },
-  variants: {}
+  variants: {},
 };
