@@ -10,12 +10,12 @@ import PersonCard from "../components/atoms/PersonCard";
 import { useTranslation } from "react-i18next";
 import Testimony from "../components/Testimony";
 import { useInView } from "react-intersection-observer";
-import Img from "gatsby-image";
+import teamPhoto from "../images/team.svg";
 
 function IndexPage() {
   const { t } = useTranslation(["index", "contactForm", "SEO"]);
 
-  const { bg, teamPhoto, personPhoto } = useStaticQuery(graphql`
+  const { bg, personPhoto } = useStaticQuery(graphql`
     fragment Image on File {
       sharp: childImageSharp {
         fluid {
@@ -25,9 +25,6 @@ function IndexPage() {
     }
     query {
       bg: file(relativePath: { eq: "bg-hero.jpg" }) {
-        ...Image
-      }
-      teamPhoto: file(relativePath: { eq: "team.jpg" }) {
         ...Image
       }
       personPhoto: file(relativePath: { eq: "person2.jpg" }) {
@@ -137,10 +134,10 @@ function IndexPage() {
                   inView ? "anim" : ""
                 } animated FadeLeft`}
               >
-                <Img
-                  fluid={teamPhoto.sharp.fluid}
+                <img
+                  src={teamPhoto}
                   className="rounded-lg"
-                  alt="Team"
+                  alt="A man working"
                 />
               </div>
 
