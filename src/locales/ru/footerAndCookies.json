@@ -5,13 +5,13 @@
   "langOne": "lv",
   "langTwo": "en",
   "langThree": "ru",
-  "getInTouch": "Напишите нам",
+  "getInTouch": "Напишите нам!",
   "contacts": "Контакты",
   "followUs": "Подпишитесь на нас",
   "privacy": "Политика конфиденциальности",
   "cookies": "Настройки cookie",
   "bannerText": "Мы используем cookie-файлы чтобы обеспечить найлучшую работу веб-сайта.",
   "policyLink": "Политика конфиденциальности",
-  "buttonDecline": "Принять",
-  "buttonAccept": "Отклонить"
+  "buttonDecline": "Отклонить",
+  "buttonAccept": "Принять"
 }

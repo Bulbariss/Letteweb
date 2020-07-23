@@ -1,9 +1,8 @@
 {
   "heading": "Новое поколение \n веб-разработки",
-  "secondHeading": "Мы создаем веб-сайты для предприятий, которые предоставляют отличный опыт для своих пользователей",
+  "secondHeading": "Мы создаем веб-сайты для вашего бизнеса",
   "primaryButton": "Связаться",
-  "secondaryButton": "Подробнее",
-  "testimony": "Combining modern design with science proved principles allows us to create beautiful and functional websites that bring customers to your business.",
+  "secondaryButton": "О Нас",
   "testimonyHeading": "Как мы работаем",
   "testimonyText": "Сочетание современного дизайна с проверенными наукой принципами позволяет нам создавать красивые и функциональные веб-сайты, которые привлекают клиентов в ваш бизнес.",
   "testimonyOne": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt soluta natus cum qui facilis repudiandae sapiente modi tempore dolores commodi!",
@@ -15,10 +14,6 @@
   "contactUsHeading": "Связаться с нами",
   "nameOne": "Эрлендс Морозс",
   "nameTwo": "Владимир Радионовский",
-  "nameThree": "John Doe",
-  "nameFour": "John Doe",
   "occupation‎One": "Менеджер проектов",
-  "occupationTwo": "Веб-разработчик",
-  "occupationThree": "Creative Director",
-  "occupationFour": "Creative Director"
+  "occupationTwo": "Веб-разработчик"
 }

@@ -5,8 +5,8 @@
   "loadingtext": "",
   "nameLabel": "Ваше Имя",
   "emailLabel": "Ваш Email",
-  "СообщениеLabel": "Ваше Сообщение",
+  "messageLabel": "Ваше Сообщение",
   "namePlaceholder": "Ваше Имя",
   "emailPlaceholder": "Ваш Email",
-  "СообщениеPlaceholder": "Ваше Сообщение"
+  "messagePlaceholder": "Ваше Сообщение"
 }

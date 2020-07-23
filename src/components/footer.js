@@ -51,7 +51,7 @@ function Footer() {
                 </Link>
               </div>
               <div className="w-1/2 lg:w-4/12">
-                <p className="text-sm mb-2 font-bold">Follow us</p>
+                <p className="text-sm mb-2 font-bold">{t("followUs")}</p>
                 <Link to="/" className="block w-fit mb-2 hover-opacity">
                   Instagram
                 </Link>
