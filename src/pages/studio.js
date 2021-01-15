@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import Waves from "../components/waves";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
-import MoovingLetters from "../components/MoovingLetters";
+import MoovingLetters from "../components/moovingLetters";
 import { useTranslation } from "react-i18next";
 import StudioCard from "../components/atoms/StudioCard";
 
